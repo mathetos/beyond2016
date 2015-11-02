@@ -1,0 +1,31 @@
+// _header.scss
+@media screen and (min-width: 44.375em) {
+  .page-header {
+      margin-right: 7.6923%;
+  }
+}
+@media screen and (min-width: 56.875em) {
+
+  .site-header {
+    text-align: center;
+
+    .site-branding {
+      width: 100%;
+      float: none;
+      margin: 0 auto;
+    }
+
+    .site-header-menu {
+      text-align: center;
+      width: 100%;
+      margin: 0 auto;
+
+
+      ul li {
+        float: none;
+        display: inline-block;
+      }
+
+    }
+  }
+}

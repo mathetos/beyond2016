@@ -1,0 +1,27 @@
+{
+  "name": "matt2016",
+  "version": "1.0.0",
+  "description": "A twentysixteen child theme to take twentysixteen where twentysixteen has never gone before.",
+  "author": "Matt Cromwell <reachme@mattcromwell.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mathetos/matt2016"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "~3.9.0",
+    "gulp-autoprefixer": "0.0.6",
+    "gulp-cache": "~0.1.1",
+    "gulp-concat": "~2.1.7",
+    "gulp-imagemin": "~0.1.4",
+    "gulp-jshint": "~1.3.4",
+    "gulp-livereload": "~0.3.2",
+    "gulp-load-plugins": "~0.2.0",
+    "gulp-minify-css": "~0.2.0",
+    "gulp-notify": "~2.2.0",
+    "gulp-rename": "~0.2.2",
+    "gulp-sass": "~2.0.4",
+    "gulp-uglify": "~0.2.0",
+    "tiny-lr": "0.0.5"
+  }
+}
