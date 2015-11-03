@@ -17,7 +17,7 @@ gulp.task('styles', function() {
 });
 
 // EDD Styles
-gulp.task('styles', function() {
+gulp.task('edd', function() {
     return gulp.src('assets/styles/source/edd-styles.*')
         .pipe(plugins.sass({ outputStyle: 'expanded' }))
         .pipe(plugins.autoprefixer('last 2 versions', 'ie 9', 'ios 6', 'android 4'))
@@ -80,7 +80,7 @@ gulp.task('watch', function() {
         };
 
         // Watch .scss files
-        gulp.watch('assets/styles/source/**/*.scss', ['styles']);
+        gulp.watch('assets/styles/source/**/*.scss', ['styles', 'edd']);
 
         // Watch .js files
         gulp.watch('assets/js/**/*.js', ['plugins', 'scripts']);
@@ -96,4 +96,4 @@ gulp.task('watch', function() {
 });
 
 // Default task
-gulp.task('default', ['styles', 'plugins', 'scripts', 'images', 'php', 'watch']);
+gulp.task('default', ['styles', 'edd', 'plugins', 'scripts', 'images', 'php', 'watch']);

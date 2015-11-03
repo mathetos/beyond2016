@@ -1,5 +1,50 @@
 <?php
 
+// Remove custom header theme support in order to customize it on our own
+
+add_action( 'after_setup_theme', 'remove_custom_header', 11 );
+
+function remove_custom_header() {
+
+    // This will remove support for post thumbnails on ALL Post Types
+    remove_theme_support( 'custom-header' );
+
+}
+
+
+/**
+ * Adds the individual sections, settings, and controls to the theme customizer
+ */
+function matt2016_add_header_customizer_section( $wp_customize ) {
+    $wp_customize->add_section(
+        'header_section',
+        array(
+            'title' => 'Site Header',
+            'description' => 'Customize the header layout and header image options.',
+            'priority' => 9,
+        )
+    );
+
+    // WP_Customize_Image_Control
+        $wp_customize->add_setting( 'image_setting', array(
+            'default'        => '',
+        ) );
+
+        $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'image_setting', array(
+            'label'   => 'Image Setting',
+            'section' => 'header_section',
+            'settings'   => 'image_setting',
+            'priority' => 8
+        ) ) );
+}
+add_action( 'customize_register', 'matt2016_add_header_customizer_section' );
+
+
+
+
+
+
+
 //add_filter ( 'twentysixteen_color_schemes', 'matt2016_color_schemes' );
 
 function matt2016_color_schemes() {

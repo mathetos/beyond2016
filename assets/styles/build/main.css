@@ -63,3 +63,14 @@ body.no-sidebar .entry-header {
     display: inline-block;
   }
 }
+
+body.no-sidebar .entry-footer,
+body.no-sidebar .content-bottom-widgets {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+body.no-sidebar .comments-area {
+  margin-left: 0;
+  margin-right: 0;
+}
