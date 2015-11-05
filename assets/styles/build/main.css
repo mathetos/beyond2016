@@ -39,28 +39,48 @@ body.no-sidebar .entry-header {
 }
 
 @media screen and (min-width: 44.375em) {
-  .page-header {
+  body.header-center .page-header {
     margin-right: 7.6923%;
   }
 }
 
 @media screen and (min-width: 56.875em) {
-  .site-header {
+  body.header-center .site-header {
     text-align: center;
   }
-  .site-header .site-branding {
+  body.header-center .site-header .site-branding {
     width: 100%;
     float: none;
     margin: 0 auto;
   }
-  .site-header .site-header-menu {
+  body.header-center .site-header .site-header-menu {
     text-align: center;
     width: 100%;
     margin: 0 auto;
   }
-  .site-header .site-header-menu ul li {
+  body.header-center .site-header .site-header-menu ul li {
     float: none;
     display: inline-block;
+  }
+  body.header-image-behind .site-header-main {
+    min-height: 280px;
+    position: relative;
+  }
+  body.header-image-behind .site-header-main .site-branding {
+    position: absolute;
+    top: 35%;
+    padding: 0;
+    margin: 0;
+  }
+  body.header-image-behind .site-header-main .site-header-menu {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  body.header-image-behind .site-header-main .site-branding .site-title a,
+  body.header-image-behind .site-header-main .site-description,
+  body.header-image-behind .site-header-main .main-navigation a {
+    color: white;
   }
 }
 
