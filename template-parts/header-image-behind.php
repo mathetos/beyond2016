@@ -7,23 +7,21 @@
   $bkgrdstyle = 'style="background-image: url(' . get_header_image() . ')"';
 } else {
   $bkgrdstyle = 'style="background: black;"';
-}?>
+} ?>
 <div class="site-header-main" <?php echo $bkgrdstyle; ?>>
-  <div class="site-branding">
-    <?php
-    $showsiteicon = get_theme_mod('show_site_icon');
-    if (has_site_icon() && $showsiteicon == 1):
-      $hasicon = 'hasicon';
-      ?>
-    <img src="<?php site_icon_url(); ?>" class="site-icon">
-    <?php
-      else : $hasicon = '';
-    endif;
-    if ( is_front_page() && is_home() ) : ?>
-      <h1 class="site-title <?php echo $hasicon; ?>"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-    <?php else : ?>
-      <p class="site-title <?php echo $hasicon; ?>"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-    <?php endif;
+  <?php
+  $showsiteicon = get_theme_mod('show_site_icon');
+  if (has_site_icon() && $showsiteicon == 1) {
+    $hasicon = 'hasicon';
+    ?>
+  <img src="<?php site_icon_url(); ?>" class="site-icon">
+  <?php } else { $hasicon = ''; } ?>
+  <div class="site-branding <?php echo $hasicon; ?>">
+    <?php if ( is_front_page() && is_home() ) { ?>
+      <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+    <?php } else { ?>
+      <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+    <?php }
 
     $description = get_bloginfo( 'description', 'display' );
     if ( $description || is_customize_preview() ) : ?>

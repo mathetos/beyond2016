@@ -38,6 +38,10 @@ body.no-sidebar .entry-header {
   }
 }
 
+.site-icon {
+  max-width: 200px;
+}
+
 @media screen and (min-width: 44.375em) {
   body.header-center .page-header {
     margin-right: 7.6923%;
@@ -45,6 +49,10 @@ body.no-sidebar .entry-header {
 }
 
 @media screen and (min-width: 56.875em) {
+  body.header-center .site-icon {
+    margin: 0 auto;
+    margin-top: 1em;
+  }
   body.header-center .site-header {
     text-align: center;
   }
@@ -66,21 +74,39 @@ body.no-sidebar .entry-header {
     min-height: 280px;
     position: relative;
   }
-  body.header-image-behind .site-header-main .site-branding {
+  body.header-image-behind.header-left .site-header-main {
+    padding: 2em;
+    position: relative;
+  }
+  body.header-image-behind.header-left .hasicon .site-title {
+    position: absolute;
+    top: 48%;
+    -webkit-transform: translateY(-48%);
+    -ms-transform: translateY(-48%);
+    transform: translateY(-48%);
+    left: 250px;
+  }
+  body.header-image-behind.header-left .hasicon .site-description {
+    position: absolute;
+    top: -webkit-calc(48% + 1.5em);
+    top: calc(48% + 1.5em);
+    -webkit-transform: translateY(-48%);
+    -ms-transform: translateY(-48%);
+    transform: translateY(-48%);
+    left: 250px;
+  }
+  body.header-image-behind.header-center .site-branding {
     position: absolute;
     top: 35%;
+    left: 0;
     padding: 0;
     margin: 0;
   }
-  body.header-image-behind .site-header-main .site-header-menu {
+  body.header-image-behind.header-center .site-header-menu {
     position: absolute;
     bottom: 0;
+    left: 0;
     background: rgba(0, 0, 0, 0.5);
-  }
-  body.header-image-behind .site-header-main .site-branding .site-title a,
-  body.header-image-behind .site-header-main .site-description,
-  body.header-image-behind .site-header-main .main-navigation a {
-    color: white;
   }
 }
 

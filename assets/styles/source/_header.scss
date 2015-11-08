@@ -1,4 +1,7 @@
 // _header.scss
+.site-icon {
+  max-width: 200px;
+}
 
 @media screen and (min-width: 44.375em) {
   body.header-center {
@@ -10,6 +13,10 @@
 @media screen and (min-width: 56.875em) {
 
   body.header-center {
+    .site-icon {
+      margin: 0 auto;
+      margin-top: 1em;
+    }
     .site-header {
       text-align: center;
 
@@ -38,25 +45,43 @@
     .site-header-main {
       min-height: 280px;
       position: relative;
+    }
 
-    .site-branding {
-        position: absolute;
-        top: 35%;
-        padding: 0;
-        margin: 0;
+    &.header-left {
+      .site-header-main {
+        padding: 2em;
+        position: relative;
       }
 
-      .site-header-menu {
-        position: absolute;
-        bottom: 0;
-        background: rgba(0,0,0,0.5);
+      .hasicon .site-title {
+          position: absolute;
+          top: 48%;
+          transform: translateY(-48%);
+          left: 250px;
       }
-
-      .site-branding .site-title a,
-      .site-description,
-      .main-navigation a {
-        color: white;
+      .hasicon .site-description {
+          position: absolute;
+          top: calc(48% + 1.5em);
+          transform: translateY(-48%);
+          left: 250px;
       }
     }
+
+    &.header-center {
+      .site-branding {
+          position: absolute;
+          top: 35%;
+          left: 0;
+          padding: 0;
+          margin: 0;
+        }
+
+        .site-header-menu {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          background: rgba(0,0,0,0.5);
+        }
+      }
   }
 }

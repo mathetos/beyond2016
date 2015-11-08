@@ -4,14 +4,15 @@
  */
 ?>
 <div class="site-header-main">
+  <?php if ( get_header_image() ) : ?>
+    <div class="header-image">
+      <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+        <img src="<?php header_image(); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+      </a>
+    </div>
+  <?php endif; // End header image check. ?>
   <div class="site-branding">
-    <?php if ( get_header_image() ) : ?>
-      <div class="header-image">
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-          <img src="<?php header_image(); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
-        </a>
-      </div>
-    <?php endif; // End header image check. ?>
+
     <?php
     $showsiteicon = get_theme_mod('show_site_icon');
     if (has_site_icon() && $showsiteicon == 1):
