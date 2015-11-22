@@ -3,7 +3,11 @@
 }
 
 body.no-sidebar  {
+
+
   .site-header, .site-main article {
+    max-width: 60em;
+    margin: 0 auto;
 
   }
 

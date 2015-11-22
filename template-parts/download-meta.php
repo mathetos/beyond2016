@@ -4,16 +4,16 @@
  *
  * @package WordPress
  * @subpackage Twenty_Sixteen
- * @since Twenty Sixteen 1.0
+ * @since Beyond 2016 1.0
  */
 ?>
 <div class="author-info">
 		<h4>About <?php the_title(); ?></h4>
 		<?php
 		/**
-		 * Filter the Twenty Sixteen author bio avatar size.
+		 * Filter the Beyond 2016 author bio avatar size.
 		 *
-		 * @since Twenty Sixteen 1.0
+		 * @since Beyond 2016 1.0
 		 *
 		 * @param int $size The avatar height and width size in pixels.
 		 */

@@ -1,0 +1,25 @@
+/**
+ * 11.0 - Content
+ */
+
+.site {
+	background-color: #fff;
+}
+
+.site-inner {
+	margin: 0 auto;
+	max-width: 1320px;
+	position: relative;
+}
+
+.site-content {
+	word-wrap: break-word;
+}
+
+.site-main {
+	margin-bottom: 3.5em;
+}
+
+.site-main > :last-child {
+	margin-bottom: 0;
+}

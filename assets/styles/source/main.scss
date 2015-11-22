@@ -1,13 +1,67 @@
 // main.scss
 
-// Layout
-@import 'layout';
+// 1.0 Normalize
+@import 'normalize';
 
-// Header
+// 2.0 Genericons
+@import 'genericons';
+
+// 3.0 Typography
+@import 'typography';
+
+// 4.0 Elements
+@import 'elements';
+
+// 5.0 Forms
+@import 'forms';
+
+// 6.0-6.2 Navigation (Links, Menus)
+@import 'navigation';
+
+// 7.0 Accessibility
+@import 'accessibility';
+
+// 8.0 Alignments
+@import 'alignments';
+
+// 9.0 Clearings
+@import 'clearings';
+
+// 10.0 Widgets
+@import 'widgets';
+
+// 11.0 Content
+@import 'content';
+
+// 11.1 Header
 @import 'header';
 
-// Footer
+// 11.2 Post and Pages
+@import 'postsandpages';
+
+// 11.3 Post Formats
+@import 'postformats';
+
+// 11.4 Comments
+@import 'comments';
+
+// 11.5 Sidebar
+@import 'sidebar';
+
+// 11.6 Footer
 @import 'footer';
 
-// Comments
-@import 'comments'; 
+// 12.0-12.3 Media (Captions, Galleries)
+@import 'media';
+
+// 13.0 Multisite
+@import 'multisite';
+
+// 14.0-14.5 Media Queries
+@import 'mediaqueries';
+
+// 15.0 Print
+@import 'print';
+
+// Layout
+//@import 'layout';

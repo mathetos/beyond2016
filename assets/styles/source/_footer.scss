@@ -1,5 +1,43 @@
 // _footer.scss
 
+/**
+ * 11.6 - Footer
+ */
+
+.site-footer {
+	padding: 0 7.6923% 1.75em;
+}
+
+.site-info {
+	color: #686868;
+	font-size: 13px;
+	font-size: 0.8125rem;
+	line-height: 1.6153846154;
+}
+
+.site-info a {
+	color: #686868;
+}
+
+.site-info a:hover,
+.site-info a:focus {
+	color: #007acc;
+}
+
+.site-footer .site-title {
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: 400;
+}
+
+.site-footer .site-title:after {
+	content: "\002f";
+	display: inline-block;
+	font-family: Montserrat, sans-serif;
+	opacity: 0.7;
+	padding: 0 0.307692308em 0 0.538461538em;
+}
+
 body.no-sidebar {
 
   .entry-footer,
@@ -8,4 +46,24 @@ body.no-sidebar {
     margin-left: 0;
   }
 
+}
+
+/*BEYOND 2016 Custom Footer Styles*/
+footer.site-footer {
+	.site-info {
+			width: 50%;
+	}
+
+	.site-info p.credits {
+		display: inline-block;
+		float: left;
+		margin: 0 2em 0 0;
+	}
+
+	.f-text,
+	.copyright {
+		display: inline-block;
+		float: left;
+		padding: 1em 0;
+	}
 }

@@ -43,7 +43,7 @@ gulp.task('plugins', function() {
 // Site Scripts
 gulp.task('scripts', function() {
     return gulp.src(['assets/js/source/*.js', '!assets/js/source/plugins.js'])
-        .pipe(plugins.jshint('.jshintrc'))
+        //.pipe(plugins.jshint('.jshintrc'))
         .pipe(plugins.jshint.reporter('default'))
         .pipe(plugins.concat('main.js'))
         .pipe(gulp.dest('assets/js/build'))

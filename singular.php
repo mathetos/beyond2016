@@ -10,7 +10,7 @@
  *
  * @package WordPress
  * @subpackage Twenty_Sixteen
- * @since Twenty Sixteen 1.0
+ * @since Beyond 2016 1.0
  */
 
 if (is_singular('download')) {
