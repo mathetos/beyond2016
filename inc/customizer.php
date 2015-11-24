@@ -206,7 +206,7 @@ function beyond2016_get_color_schemes() {
 	/**
 	 * Filter the color schemes registered for use with Beyond 2016.
 	 *
-	 * The default schemes include 'default', 'dark', 'gray', 'green', and 'yellow'.
+	 * The default schemes include 'default', 'dark', 'gray', 'red', and 'yellow'.
 	 *
 	 * @since Beyond 2016 1.0
 	 *
@@ -554,7 +554,6 @@ function beyond2016_get_color_scheme_css( $colors ) {
 
 	/* Main Text Color */
 	body,
-	select,
 	blockquote cite,
 	blockquote small,
 	.main-navigation a,
@@ -960,7 +959,6 @@ function beyond2016_main_text_color_css() {
 	$css = '
 		/* Custom Main Text Color */
 		body,
-		select,
 		blockquote cite,
 		blockquote small,
 		.main-navigation a,

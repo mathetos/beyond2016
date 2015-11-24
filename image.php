@@ -4,7 +4,7 @@
  *
  * @package WordPress
  * @subpackage Twenty_Sixteen
- * @since Beyond 2016 1.0
+ * @since Twenty Sixteen 1.0
  */
 
 get_header(); ?>
@@ -37,16 +37,16 @@ get_header(); ?>
 								/**
 								 * Filter the default twentysixteen image attachment size.
 								 *
-								 * @since Beyond 2016 1.0
+								 * @since Twenty Sixteen 1.0
 								 *
 								 * @param string $image_size Image size. Default 'large'.
 								 */
-								$image_size = apply_filters( 'twentysixteen_attachment_size', 'large' );
+								$image_size = apply_filters( 'beyond2016_attachment_size', 'large' );
 
 								echo wp_get_attachment_image( get_the_ID(), $image_size );
 							?>
 
-							<?php twentysixteen_excerpt( 'entry-caption' ); ?>
+							<?php beyond2016_excerpt( 'entry-caption' ); ?>
 
 						</div><!-- .entry-attachment -->
 
@@ -64,7 +64,7 @@ get_header(); ?>
 					</div><!-- .entry-content -->
 
 					<footer class="entry-footer">
-						<?php twentysixteen_entry_meta(); ?>
+						<?php beyond2016_entry_meta(); ?>
 						<?php
 							// Retrieve attachment metadata.
 							$metadata = wp_get_attachment_metadata();
@@ -81,8 +81,8 @@ get_header(); ?>
 							edit_post_link(
 								sprintf(
 									/* translators: %s: Name of current post */
-									__( 'Edit %s', 'twentysixteen' ),
-									the_title( '<span class="screen-reader-text">', '</span>', false )
+									__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'twentysixteen' ),
+									the_title( '', '', false )
 								),
 								'<span class="edit-link">',
 								'</span>'

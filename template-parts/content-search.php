@@ -4,7 +4,7 @@
  *
  * @package WordPress
  * @subpackage Twenty_Sixteen
- * @since Beyond 2016 1.0
+ * @since Twenty Sixteen 1.0
  */
 ?>
 
@@ -25,8 +25,8 @@
 				edit_post_link(
 					sprintf(
 						/* translators: %s: Name of current post */
-						__( 'Edit %s', 'twentysixteen' ),
-						the_title( '<span class="screen-reader-text">"', '"</span>', false )
+						__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'beyond2016' ),
+						the_title( '', '', false )
 					),
 					'<span class="edit-link">',
 					'</span>'
@@ -40,8 +40,8 @@
 			edit_post_link(
 				sprintf(
 					/* translators: %s: Name of current post */
-					__( 'Edit %s', 'twentysixteen' ),
-					the_title( '<span class="screen-reader-text">', '</span>', false )
+					__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'beyond2016' ),
+					the_title( '', '', false )
 				),
 				'<footer class="entry-footer"><span class="edit-link">',
 				'</span></footer><!-- .entry-footer -->'
@@ -50,4 +50,3 @@
 
 	<?php endif; ?>
 </article><!-- #post-## -->
-

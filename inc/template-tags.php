@@ -181,7 +181,7 @@ function beyond2016_excerpt_more() {
 	$link = sprintf( '<a href="%1$s" class="more-link">%2$s</a>',
 		esc_url( get_permalink( get_the_ID() ) ),
 		/* translators: %s: Name of current post */
-		sprintf( __( 'Continue reading %s', 'beyond2016' ), '<span class="screen-reader-text">' . get_the_title( get_the_ID() ) . '</span>' )
+		sprintf( __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'beyond2016' ), get_the_title( get_the_ID() ) )
 	);
 	return ' &hellip; ' . $link;
 }

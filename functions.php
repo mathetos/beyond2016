@@ -307,6 +307,11 @@ function beyond2016_body_classes( $classes ) {
 		$classes[] = 'no-sidebar';
 	}
 
+  // Adds a class of hfeed to non-singular pages.
+  if ( ! is_singular() ) {
+		$classes[] = 'hfeed';
+	}
+
   $headeralignment = get_theme_mod( 'header_alignment' );
   $headerlayout = get_theme_mod( 'header_layout' );
   $headerimgpos = get_theme_mod( 'header_image_position' );
@@ -355,11 +360,11 @@ add_filter( 'body_class', 'beyond2016_body_classes' );
 function beyond2016_hex2rgb( $color ) {
 	$color = trim( $color, '#' );
 
-	if ( strlen( $color ) == 3 ) {
+	if ( strlen( $color ) === 3 ) {
 		$r = hexdec( substr( $color, 0, 1 ).substr( $color, 0, 1 ) );
 		$g = hexdec( substr( $color, 1, 1 ).substr( $color, 1, 1 ) );
 		$b = hexdec( substr( $color, 2, 1 ).substr( $color, 2, 1 ) );
-	} else if ( strlen( $color ) == 6 ) {
+	} else if ( strlen( $color ) === 6 ) {
 		$r = hexdec( substr( $color, 0, 2 ) );
 		$g = hexdec( substr( $color, 2, 2 ) );
 		$b = hexdec( substr( $color, 4, 2 ) );
