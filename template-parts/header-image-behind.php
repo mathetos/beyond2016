@@ -3,11 +3,14 @@
  *   Template part for when the Header Image is set to "Behind"
  */
 ?>
-<?php if ( get_header_image() ) {
-  $bkgrdstyle = 'style="background-image: url(' . get_header_image() . ')"';
-} else {
-  $bkgrdstyle = 'style="background: black;"';
-} ?>
+<?php
+  if ( get_header_image() ) {
+    $bkgrdstyle = 'style="background-image: url(' . get_header_image() . ')"';
+  } else {
+    $bkgrdstyle = 'style="background: black;"';
+  }
+?>
+
 <div class="site-header-main" <?php echo $bkgrdstyle; ?>>
   <?php
   $showsiteicon = get_theme_mod('show_site_icon');

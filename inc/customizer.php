@@ -172,6 +172,17 @@ function beyond2016_customize_register( $wp_customize ) {
 		'label'       => __( 'Secondary Text Color', 'beyond2016' ),
 		'section'     => 'colors',
 	) ) );
+
+	$wp_customize->add_setting( 'content_title_color', array(
+		'default'           => $color_scheme[4],
+		'sanitize_callback' => 'sanitize_hex_color',
+		'transport'         => 'postMessage',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'content_title_color', array(
+		'label'       => __( 'Content Title Color', 'beyond2016' ),
+		'section'     => 'colors',
+	) ) );
 }
 add_action( 'customize_register', 'beyond2016_customize_register', 11 );
 
@@ -261,6 +272,16 @@ function beyond2016_get_color_schemes() {
 				'#774e24',
 				'#3b3721',
 				'#5b4d3e',
+			),
+		),
+		'beyond2016' => array(
+			'label'  => __( 'Beyond 2016', 'beyond2016' ),
+			'colors' => array(
+				'#4d6b8e',
+				'#f1f1f1',
+				'#4d6b8e',
+				'#595959',
+				'#bc822b',
 			),
 		),
 	) );

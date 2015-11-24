@@ -52,18 +52,23 @@ body.no-sidebar {
 footer.site-footer {
 	.site-info {
 			width: 50%;
+			position: relative;
 	}
 
 	.site-info p.credits {
 		display: inline-block;
 		float: left;
 		margin: 0 2em 0 0;
+		position: absolute;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
 	}
 
 	.f-text,
 	.copyright {
 		display: inline-block;
 		float: left;
-		padding: 1em 0;
+		padding: 0 0 0 65px;
 	}
 }

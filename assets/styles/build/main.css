@@ -2383,19 +2383,26 @@ body.no-sidebar .content-bottom-widgets {
 /*BEYOND 2016 Custom Footer Styles*/
 footer.site-footer .site-info {
   width: 50%;
+  position: relative;
 }
 
 footer.site-footer .site-info p.credits {
   display: inline-block;
   float: left;
   margin: 0 2em 0 0;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 footer.site-footer .f-text,
 footer.site-footer .copyright {
   display: inline-block;
   float: left;
-  padding: 1em 0;
+  padding: 0 0 0 65px;
 }
 
 /**
@@ -2656,6 +2663,102 @@ p > video {
 .widecolumn .mu_register > :last-child,
 .widecolumn form > :last-child {
   margin-bottom: 0;
+}
+
+/* RESPONSIVE COLUMNS */
+/*  SECTIONS  */
+.by16-section {
+  clear: both;
+  padding: 0px;
+  margin: 0px;
+}
+
+/*  COLUMN SETUP  */
+.by16-col {
+  display: block;
+  float: left;
+  margin: 1% 0 1% 1.6%;
+  width: 32.26%;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.by16-col:nth-child(1),
+.by16-col:nth-child(4),
+.by16-col:nth-child(7),
+.by16-col:nth-child(10) {
+  margin-left: 0;
+}
+
+.by16-col:nth-child(3),
+.by16-col:nth-child(6),
+.by16-col:nth-child(9),
+.by16-col:nth-child(12) {
+  margin-right: 0;
+}
+
+/*  GROUPING  */
+.by16-group:before,
+.by16-group:after {
+  content: "";
+  display: table;
+}
+
+.by16-group:after {
+  clear: both;
+}
+
+.by16-group {
+  zoom: 1;
+  /* For IE 6/7 */
+}
+
+/*  GRID OF THREE  */
+/*  GO FULL WIDTH BELOW 480 PIXELS */
+@media only screen and (max-width: 480px) {
+  .by16-col {
+    margin: 1% 0 1% 0%;
+    width: 100%;
+  }
+}
+
+body.error404 .site-header,
+body.error404 .site-footer {
+  text-align: center;
+  padding-right: 0;
+  padding-left: 0;
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+.error404-recent-posts {
+  text-align: center;
+  padding-right: 0;
+  padding-left: 0;
+  max-width: 840px;
+  margin: 3em auto 0;
+}
+
+.error404-recent-posts h3 {
+  text-align: left;
+  margin-bottom: 1em;
+  font-style: italic;
+}
+
+.error404-recent-posts .genericon {
+  vertical-align: middle;
+}
+
+.error404-recent-posts h4 {
+  margin: 0.6em 0;
+}
+
+.error404-recent-posts p {
+  margin-top: 0.6em;
+  margin-bottom: 0;
+  font-size: 90%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 /**

@@ -66,7 +66,7 @@
 				<?php }
 
  				  if ( $copyright == 'yes') {
-						$defaultcpyrt = '  |  <span class="copyright">Copyright &copy; ' . date("Y") . '&nbsp;' . get_bloginfo('name') . '</span>';
+						$defaultcpyrt = '<span class="copyright">Copyright &copy; ' . date("Y") . '&nbsp;' . get_bloginfo('name') . '</span>';
 
 						echo apply_filters('beyond2016_copyright', $defaultcpyrt);
 					}
