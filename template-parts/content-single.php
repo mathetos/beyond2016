@@ -13,9 +13,9 @@
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
-	<?php twentysixteen_excerpt(); ?>
+	<?php beyond2016_excerpt(); ?>
 
-	<?php twentysixteen_post_thumbnail(); ?>
+	<?php beyond2016_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
@@ -37,7 +37,7 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php twentysixteen_entry_meta(); ?>
+		<?php beyond2016_entry_meta(); ?>
 		<?php
 			edit_post_link(
 				sprintf(
