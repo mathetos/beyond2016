@@ -106,15 +106,15 @@ function beyond2016_setup() {
 	 * See: https://codex.wordpress.org/Post_Formats
 	 */
 	add_theme_support( 'post-formats', array(
-		'aside',
+		//'aside',
 		'image',
 		'video',
-		'quote',
-		'link',
+		//'quote',
+		//'link',
 		'gallery',
-		'status',
+		//'status',
 		'audio',
-		'chat',
+		//'chat',
 	) );
 
 	/*
@@ -436,3 +436,4 @@ add_filter( 'wp_get_attachment_image_attributes', 'beyond2016_post_thumbnail_siz
 /*Add Custom Functions */
 
 include_once('inc/beyond2016-functions.php');
+include_once('inc/metaboxes.php');

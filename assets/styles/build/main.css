@@ -2678,6 +2678,18 @@ p > video {
   margin: 0px;
 }
 
+/* Sidebar Alignments */
+.content-area.sidebar-left {
+  margin-left: 5%;
+  float: left;
+}
+
+.sidebar.left {
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+}
+
 /*  COLUMN SETUP  */
 .by16-col {
   display: block;
@@ -3439,9 +3451,6 @@ body.error404 .site-footer {
   .author-info {
     border-bottom-width: 0;
     padding-bottom: 0;
-  }
-  .entry-footer {
-    margin-top: 4.3076923077em;
   }
   .comment-list + .comment-respond,
   .comment-navigation + .comment-respond {

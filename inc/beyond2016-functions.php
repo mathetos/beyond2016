@@ -11,9 +11,9 @@ function beyond2016_customizer_enqueue() {
 }
 add_action( 'customize_controls_enqueue_scripts', 'beyond2016_customizer_enqueue' );
 
-add_filter( 'body_class', 'matt2016_header_body_classess' );
+add_filter( 'body_class', 'beyond2016_body_classess' );
 
-function matt2016_header_body_classess($classes) {
+function beyond2016_body_classess($classes) {
    $headeralignment = get_theme_mod( 'header_alignment' );
    $headerlayout = get_theme_mod( 'header_layout' );
    $headerimgpos = get_theme_mod( 'header_image_position' );
@@ -45,9 +45,12 @@ function matt2016_header_body_classess($classes) {
       $classes[] = 'header-image-below';
    }
 
-	 if ( is_404() ) {
+	 global $post;
+	 $sidebar = get_post_meta( $post->ID, 'beyond2016-sidebar-layout' );
+
+	 if ( is_404() || ( is_page() && $sidebar[0] == 'disable' ) ) {
  		$classes[] = 'no-sidebar';
- 	}
+ 		}
 
    return $classes;
  }

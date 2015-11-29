@@ -6,10 +6,18 @@
  * @subpackage Twenty_Sixteen
  * @since Twenty Sixteen 1.0
  */
+
+$hidetitle = get_post_meta( $post->ID, 'disable-title' );
+
+if ($hidetitle[0] == 'yes') {
+	$hide = 'style="display:none;"';
+} else {
+	$hide = '';
+}
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
+	<header class="entry-header" <?php echo $hide; ?>>
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
