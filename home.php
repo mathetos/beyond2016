@@ -1,15 +1,13 @@
 <?php
 /**
- * The template for displaying archive pages
+ * The main template file
  *
- * Used to display archive-type pages if nothing more specific matches a query.
- * For example, puts together date-based pages if no date.php file exists.
+ * This is the most generic template file in a WordPress theme
+ * and one of the two required files for a theme (the other being style.css).
+ * It is used to display a page when nothing more specific matches a query.
+ * E.g., it puts together the home page when no home.php file exists.
  *
- * If you'd like to further customize these archive views, you may create a
- * new template file for each one. For example, tag.php (Tag archives),
- * category.php (Category archives), author.php (Author archives), etc.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * @link http://codex.wordpress.org/Template_Hierarchy
  *
  * @package WordPress
  * @subpackage Twenty_Sixteen
@@ -22,22 +20,17 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
+			<?php apply_filters('beyond2016_before_blog_intro', ''); ?>
 
-			<header class="page-header">
-				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="taxonomy-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
+			<div class="blog-intro">
+				<h1>My Writings</h1>
+				<p>This is an overview of my writing. I write about a few different things, so they are grouped by major topic. You'll find though that there's plenty of cross-over. I find that's part of what it means to be alive. Nothing is ever isolated. Life is cross-over, complexity. Death is a siloed existence of banal absolutes. Live in the cross-over with me.</p>
+			</div>
 
+			<?php apply_filters('beyond2016_after_blog_intro', ''); ?>
+			<ul id="og-grid" class="og-grid">
 			<?php
-			// Start the Loop.
-			if ( has_filter( 'taxonomy-images-queried-term-image', 'taxonomy_images_plugin_get_queried_term_image' ) ) {
-
-				print apply_filters( 'taxonomy-images-queried-term-image', '', array('image_size' => 'original') );
-
-			}
-
+			// Start the loop.
 			while ( have_posts() ) : the_post();
 
 				/*
@@ -45,11 +38,14 @@ get_header(); ?>
 				 * If you want to override this in a child theme, then include a file
 				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 				 */
-				get_template_part( 'template-parts/content', get_post_format() );
+				get_template_part( 'template-parts/content', 'grid' );
 
 			// End the loop.
-			endwhile;
+		endwhile; ?>
 
+		</ul>
+
+		<?php
 			// Previous/next page navigation.
 			the_posts_pagination( array(
 				'prev_text'          => __( 'Previous page', 'twentysixteen' ),
@@ -67,5 +63,5 @@ get_header(); ?>
 		</main><!-- .site-main -->
 	</div><!-- .content-area -->
 
-<?php get_sidebar(); ?>
+<?php //get_sidebar(); ?>
 <?php get_footer(); ?>

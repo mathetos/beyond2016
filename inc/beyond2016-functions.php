@@ -45,15 +45,16 @@ function beyond2016_body_classess($classes) {
       $classes[] = 'header-image-below';
    }
 
-	 global $post;
-	 $sidebar = get_post_meta( $post->ID, 'beyond2016-sidebar-layout' );
+	if ( is_page() && $sidebar[0] == 'disable' ) {
+		global $post;
+		$sidebar = get_post_meta( $post->ID, 'beyond2016-sidebar-layout' );
+		$classes[] = 'no-sidebar';
+	} elseif ( is_404() || is_home() || is_front_page() ) {
+		$classes[] = 'no-sidebar';
+	}
 
-	 if ( is_404() || ( is_page() && $sidebar[0] == 'disable' ) ) {
- 		$classes[] = 'no-sidebar';
- 		}
-
-   return $classes;
- }
+	return $classes;
+}
 
 /*Recent Posts Action*/
 
@@ -74,3 +75,31 @@ function  beyond2016_recent_posts_function($args) {
 	</div>
 	<?php
 }
+
+/* Enqueue Blog Grid Stlyes & Scripts */
+
+function beyond2016_archive_grid_scripts() {
+	if ( is_home() || is_front_page() ) {
+
+		wp_enqueue_style( 'b16-grid-style', get_template_directory_uri() . '/assets/styles/archive-grid.css' );
+
+		wp_enqueue_script( 'b16-grid-modernizer', get_template_directory_uri() . '/assets/js/modernizr.custom.js', array(), '1.0.0', false );
+		wp_enqueue_script( 'b16-grid', get_template_directory_uri() . '/assets/js/grid.js', array('jquery', 'b16-grid-modernizer'), '1.0.0', true );
+
+	}
+}
+
+add_action( 'wp_enqueue_scripts', 'beyond2016_archive_grid_scripts' );
+
+function beyond2016_print_archive_grid_init() {
+  if ( is_home() || is_front_page() ) {
+?>
+<script type="text/javascript">
+			jQuery(document).ready(function( $ ) {
+				Grid.init();
+			});
+</script>
+<?php
+  }
+}
+add_action( 'wp_footer', 'beyond2016_print_archive_grid_init' );

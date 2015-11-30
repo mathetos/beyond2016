@@ -105,5 +105,6 @@ function beyond2016_page_layout_options( $post )
         update_post_meta( $post_id, 'hide-footer', '' );
     }
 
-  }
-  add_action( 'save_post_page', 'save_beyond2016_page_layout_options', 10, 3 );
+}
+
+add_action( 'save_post_page', 'save_beyond2016_page_layout_options', 10, 3 );
