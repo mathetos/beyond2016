@@ -13,7 +13,7 @@
 		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 	</header><!-- .entry-header -->
 
-	<?php beyond2016_post_thumbnail(); ?>
+	<?php beyond2016_post_thumbnail($size = 'post-thumbnail'); ?>
 
 	<?php beyond2016_excerpt(); ?>
 

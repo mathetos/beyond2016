@@ -1,0 +1,29 @@
+/**
+ *  Custom Styles for Give Donation Plugin
+ *  https://givewp.com
+ */
+
+ //Twenty Sixteen
+ body.single-give_forms {
+
+   div.entry-summary {
+ 	margin: 0;
+   }
+
+   .give-btn {
+ 	color: #333;
+   }
+
+   .give-submit {
+ 	color: #FFF;
+   }
+
+   form[id*="give"] fieldset {
+     margin-bottom: 0;
+   }
+
+   fieldset#give_terms_agreement {
+     padding-left: 0;
+   }
+
+ }

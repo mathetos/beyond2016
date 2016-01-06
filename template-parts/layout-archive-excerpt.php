@@ -7,7 +7,7 @@
  * @since Twenty Sixteen 1.0
  */
 ?>
-
+<?php while ( have_posts() ) : the_post(); ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php if ( is_sticky() && is_home() && ! is_paged() ) : ?>
@@ -17,18 +17,11 @@
 		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 	</header><!-- .entry-header -->
 
-	<?php beyond2016_excerpt(); ?>
-
-	<?php beyond2016_post_thumbnail( $size = 'thumbnail' ); ?>
+	<?php beyond2016_post_thumbnail($size = 'post-thumbnail'); ?>
 
 	<div class="entry-content">
-		<?php
-			/* translators: %s: Name of current post */
-			the_content( sprintf(
-				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'beyond2016' ),
-				the_title( '', '', false )
-			) );
-
+			<?php beyond2016_excerpt(); ?>
+			<?php
 			wp_link_pages( array(
 				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'beyond2016' ) . '</span>',
 				'after'       => '</div>',
@@ -55,3 +48,4 @@
 		?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
+<?php endwhile; ?>

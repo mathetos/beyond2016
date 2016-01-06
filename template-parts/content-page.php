@@ -9,7 +9,7 @@
 
 $hidetitle = get_post_meta( $post->ID, 'disable-title' );
 
-if ($hidetitle[0] == 'yes') {
+if ($hidetitle == 'yes') {
 	$hide = 'style="display:none;"';
 } else {
 	$hide = '';
@@ -21,7 +21,7 @@ if ($hidetitle[0] == 'yes') {
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
-	<?php beyond2016_post_thumbnail(); ?>
+	<?php beyond2016_post_thumbnail($size = 'post-thumbnail'); ?>
 
 	<div class="entry-content">
 		<?php

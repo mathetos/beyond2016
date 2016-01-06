@@ -20,30 +20,35 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
-			<?php apply_filters('beyond2016_before_blog_intro', ''); ?>
+			<?php apply_filters('beyond2016_before_blog_intro', '');
+				$archtitle = get_theme_mod('archive_intro_title');
+				$archintrotext = get_theme_mod('archive_intro_text');
+				$archlayout = get_theme_mod('archive_layout');
+				?>
 
 			<div class="blog-intro">
-				<h1>My Writings</h1>
-				<p>This is an overview of my writing. I write about a few different things, so they are grouped by major topic. You'll find though that there's plenty of cross-over. I find that's part of what it means to be alive. Nothing is ever isolated. Life is cross-over, complexity. Death is a siloed existence of banal absolutes. Live in the cross-over with me.</p>
+				<h1><?php echo $archtitle; ?></h1>
+				<p><?php echo esc_html($archintrotext); ?></p>
 			</div>
 
-			<?php apply_filters('beyond2016_after_blog_intro', ''); ?>
-			<ul id="og-grid" class="og-grid">
-			<?php
-			// Start the loop.
-			while ( have_posts() ) : the_post();
-
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'grid' );
-
-			// End the loop.
-		endwhile; ?>
-
-		</ul>
+			<?php apply_filters('beyond2016_after_blog_intro', '');
+			switch($archlayout) {
+				case '0' :
+					get_template_part( 'template-parts/layout', 'archive-full-text' );
+					break;
+				case '1' :
+					get_template_part( 'template-parts/layout', 'archive-excerpt' );
+					break;
+				case '2' :
+					get_template_part( 'template-parts/layout', 'archive-grid' );
+					break;
+				case '3' :
+					get_template_part( 'template-parts/layout', 'archive-grid-expander' );
+					break;
+				default :
+					get_template_part( 'template-parts/layout', 'archive-full-text' );
+			}
+			?>
 
 		<?php
 			// Previous/next page navigation.

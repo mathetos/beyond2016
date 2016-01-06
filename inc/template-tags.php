@@ -121,22 +121,25 @@ if ( ! function_exists( 'beyond2016_post_thumbnail' ) ) :
  *
  * @since Beyond 2016 1.0
  */
-function beyond2016_post_thumbnail() {
+function beyond2016_post_thumbnail($size) {
 	if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
 		return;
 	}
 
 	if ( is_singular() ) :
+
 	?>
 
 	<div class="post-thumbnail">
-		<?php the_post_thumbnail(); ?>
+		<?php the_post_thumbnail($size); ?>
 	</div><!-- .post-thumbnail -->
 
 	<?php else : ?>
 
 	<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
-		<?php the_post_thumbnail( 'post-thumbnail', array( 'alt' => the_title_attribute( 'echo=0' ) ) ); ?>
+		<?php
+		
+		the_post_thumbnail( $size, array( 'alt' => the_title_attribute( 'echo=0' ) ) ); ?>
 	</a>
 
 	<?php endif; // End is_singular()
@@ -155,12 +158,34 @@ if ( ! function_exists( 'beyond2016_excerpt' ) ) :
 	 *
 	 * @param string $class Optional. Class string of the div element. Defaults to 'entry-summary'.
 	 */
-	function beyond2016_excerpt( $class = 'entry-summary' ) {
-		$class = esc_attr( $class );
+	function beyond2016_excerpt() {
+		if (is_singular()) {
+			$excerptwrap = 'entry-summary';
+		} else {
+			$excerptwrap = 'excerpt';
+		}
+		$class = esc_attr( $excerptwrap );
 
 		if ( has_excerpt() || is_search() ) : ?>
 			<div class="<?php echo $class; ?>">
-				<?php the_excerpt(); ?>
+				<?php
+					global $post;
+					$yoastdesc = get_post_meta(get_the_ID(), '_yoast_wpseo_metadesc', true);
+					//$excerptlength = get_theme_mod('excerpt_length', 25);
+					$excerpt = get_the_excerpt();
+					$content = get_the_content($post->ID);
+
+					if(!empty($yoastdesc)) {
+						$trimyoast = wp_trim_words($yoastdesc, '50');
+						echo $trimyoast;
+					} elseif(has_excerpt() == true) {
+						$trimexcerpt = wp_trim_words( $excerpt , '50'  );
+						echo strip_shortcodes($trimexcerpt);
+					} else {
+						$trimmed_content = wp_trim_words( $content, '50' );
+						echo strip_shortcodes($trimmed_content);
+					}
+				?>
 			</div><!-- .<?php echo $class; ?> -->
 		<?php endif;
 	}

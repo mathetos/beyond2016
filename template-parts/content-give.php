@@ -19,7 +19,7 @@
 
 	<?php beyond2016_excerpt(); ?>
 
-	<?php beyond2016_post_thumbnail(); ?>
+	<?php beyond2016_post_thumbnail($size = 'medium'); ?>
 
 	<div class="entry-content" id="give-form-<?php the_ID(); ?>-content" <?php post_class(); ?>>
 		<div class="<?php echo apply_filters( 'give_forms_single_summary_classes', 'summary entry-summary' ); ?>">

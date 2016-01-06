@@ -1261,6 +1261,74 @@ add_action( 'wp_enqueue_scripts', 'beyond2016_secondary_text_color_css', 11 );
 			 'priority' => 30
 	 ) );
 
+	 // Section -- Archive Layout
+	 $wp_customize->add_section(
+			'archives',
+			array(
+					'title' => 'Archives',
+					'description' => 'Customize Your Post Archive page',
+					'priority' => 55,
+			)
+		);
+
+		$wp_customize->add_setting( 'archive_intro_title', array(
+				'default'        => '',
+				'transport' => 'postMessage',
+		) );
+
+	 $wp_customize->add_control( 'archive_intro_title', array(
+			'label'   => 'Archive Intro Title',
+			 'section' => 'archives',
+			 'type'    => 'text',
+			 'description' => __('Give your Archive Intro a Title', 'beyond2016'),
+			 'priority' => 5,
+	 ) );
+
+	 $wp_customize->add_setting( 'archive_intro_text', array(
+			 'default'        => '',
+			 'transport' => 'postMessage',
+	 ) );
+
+	$wp_customize->add_control( 'archive_intro_text', array(
+		 'label'   => 'Archive Intro Text',
+			'section' => 'archives',
+			'type'    => 'textarea',
+			'description' => __('Give your Archive an introduction', 'beyond2016'),
+			'priority' => 10,
+	) );
+
+
+		$wp_customize->add_setting( 'archive_layout', array(
+				'default'        => '0',
+				'transport' => '',
+		) );
+
+	 $wp_customize->add_control( 'archive_layout', array(
+			'label'   => 'Archive Layout',
+			 'section' => 'archives',
+			 'type'    => 'radio',
+			 'description' => __('Choose your Layout Style', 'beyond2016'),
+			 'priority' => 35,
+			 'choices' => array("Full Content", "Excerpt", "Basic Grid", "Grid with Expander"),
+	 ) );
+
+	 $wp_customize->add_setting( 'basic-col-width', array(
+			 'default'        => 'thirds',
+			 'transport' => '',
+	 ) );
+
+	$wp_customize->add_control( 'basic-col-width', array(
+		 'label'   => 'Basic Grid Columns',
+			'section' => 'archives',
+			'type'    => 'select',
+			'description' => __('Choose the number of columns in your Grid', 'beyond2016'),
+			'priority' => 35,
+			'choices' => array(
+				'halves' => '2',
+				'thirds' => '3',
+				'fourths' => '4'),
+	) );
+
 		 //postMessage Settings
 		 $wp_customize->get_setting('footer_text')->transport='postMessage';
 

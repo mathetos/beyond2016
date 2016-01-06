@@ -7,7 +7,7 @@
  * @since Twenty Sixteen 1.0
  */
 ?>
-
+<?php while ( have_posts() ) : the_post(); ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php if ( is_sticky() && is_home() && ! is_paged() ) : ?>
@@ -19,7 +19,7 @@
 
 	<?php beyond2016_excerpt(); ?>
 
-	<?php beyond2016_post_thumbnail( $size = 'thumbnail' ); ?>
+	<?php beyond2016_post_thumbnail($size = 'post-thumbnail'); ?>
 
 	<div class="entry-content">
 		<?php
@@ -55,3 +55,4 @@
 		?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
+<?php endwhile; ?>

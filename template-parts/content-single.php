@@ -15,7 +15,7 @@
 
 	<?php beyond2016_excerpt(); ?>
 
-	<?php beyond2016_post_thumbnail(); ?>
+	<?php beyond2016_post_thumbnail($size = 'post-thumbnail'); ?>
 
 	<div class="entry-content">
 		<?php

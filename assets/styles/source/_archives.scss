@@ -1,0 +1,111 @@
+/* Values */
+
+$gutter: 2%;
+
+//Thirds Column width
+@function thirds() {
+  @return (100% - $gutter*2)/3;
+}
+
+// Fourths column width
+@function fourths() {
+  @return (100% - $gutter*3)/4;
+}
+
+// Halves column width
+@function halves() {
+  @return (100% - $gutter)/2;
+}
+
+/*Normalization*/
+.basic-grid, .basic-grid article,
+.basic-grid li {
+  box-sizing: border-box;
+  line-height: 0;
+}
+
+/*  Container  */
+.basic-grid {
+	clear: both;
+	padding: 0px;
+	margin: 0px;
+  overflow: hidden;
+
+  article {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/*  COLUMN SETUP  */
+.basic-grid li {
+	display: block;
+	float:left;
+  padding: 0;
+	box-sizing: border-box;
+
+  a {
+    line-height: 0;
+    word-spacing: 0;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.basic-grid li:first-child { margin-left: 0; }
+
+/*  GRID OF THREE  */
+.thirds {
+  li {
+     width: thirds();
+     margin: 0 $gutter $gutter 0;
+
+     &:nth-child(3n){
+       margin-right: 0;
+     }
+     &:nth-child(3n + 1) {
+       margin-left: 0;
+       clear: both;
+     }
+  }
+}
+
+/*  GRID OF FOUR */
+.fourths {
+  li {
+     width: fourths();
+     margin: 0 $gutter $gutter 0;
+
+     &:nth-child(4n){
+       margin-right: 0;
+     }
+     &:nth-child(4n + 1) {
+       margin-left: 0;
+       clear: both;
+     }
+  }
+}
+
+/*  GRID OF 2  */
+.halves {
+  li {
+     width: halves();
+     margin: 0 $gutter $gutter 0;
+
+     &:nth-child(2n){
+       margin-right: 0;
+     }
+     &:nth-child(2n + 1) {
+       margin-left: 0;
+       clear: both;
+     }
+  }
+}
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+@media only screen and (max-width: 480px) {
+	.basic-grid li { margin: 0 0 $gutter 0;}
+	.thirds, .fourths, .halves { width: 100%; }
+}

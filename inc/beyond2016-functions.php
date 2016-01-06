@@ -44,10 +44,11 @@ function beyond2016_body_classess($classes) {
      default :
       $classes[] = 'header-image-below';
    }
+	 global $post;
+	 $sidebar = get_post_meta( $post->ID, 'beyond2016-sidebar-layout' );
 
-	if ( is_page() && $sidebar[0] == 'disable' ) {
-		global $post;
-		$sidebar = get_post_meta( $post->ID, 'beyond2016-sidebar-layout' );
+	if ( is_page() && $sidebar == 'disable' ) {
+
 		$classes[] = 'no-sidebar';
 	} elseif ( is_404() || is_home() || is_front_page() ) {
 		$classes[] = 'no-sidebar';

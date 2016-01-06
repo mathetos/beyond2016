@@ -3853,3 +3853,163 @@ body.error404 .site-footer {
     padding: 0;
   }
 }
+
+/**
+ * Profound Grid
+ *
+ * Built in Sass (SCSS) this responsive/adaptive grid supports both fixed and fluid layouts,
+ * relative and fixed gutters, as well as your choice of semantic markup or generic '.grid-x' classes.
+ *
+ * The biggest difference to other grid systems is the use of negative margins for column
+ * placements, avoiding the subpixel rounding issues that usually break/uglify fluid layouts
+ * in some browsers.
+ *
+ * Nested columns are supported too, without having to reset the grid on each level.
+ *
+ * Credits/Inspiration:
+ * -------------------
+ * Semantic Grid: http://www.semantic.gs
+ * Susy: http://susy.oddbird.net
+ * Negative Grid: http://chrisplaneta.com/freebies/negativegrid-fluid-css-grid-by-chris-planeta/
+ *
+ * @author Profound Creative Studio
+ * @url http://www.profoundgrid.com
+ * @url http://www.weareprofound.com
+ */
+/**
+ * Clearfix
+ */
+/**
+ * Legacy Clearfix
+ */
+/**
+ * Establish the grid-containing element.
+ */
+/**
+ * Align an element to the grid.
+ */
+/**
+ * Apply to any column to make it the last one of the current row.
+ */
+/* Values */
+/*Normalization*/
+.basic-grid, .basic-grid article,
+.basic-grid li {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  line-height: 0;
+}
+
+/*  Container  */
+.basic-grid {
+  clear: both;
+  padding: 0px;
+  margin: 0px;
+  overflow: hidden;
+}
+
+.basic-grid article {
+  margin: 0;
+  padding: 0;
+}
+
+/*  COLUMN SETUP  */
+.basic-grid li {
+  display: block;
+  float: left;
+  padding: 0;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.basic-grid li a {
+  line-height: 0;
+  word-spacing: 0;
+}
+
+.basic-grid li a img {
+  width: 100%;
+}
+
+.basic-grid li:first-child {
+  margin-left: 0;
+}
+
+/*  GRID OF THREE  */
+.thirds li {
+  width: 32%;
+  margin: 0 2% 2% 0;
+}
+
+.thirds li:nth-child(3n) {
+  margin-right: 0;
+}
+
+.thirds li:nth-child(3n + 1) {
+  margin-left: 0;
+  clear: both;
+}
+
+/*  GRID OF FOUR */
+.fourths li {
+  width: 23.5%;
+  margin: 0 2% 2% 0;
+}
+
+.fourths li:nth-child(4n) {
+  margin-right: 0;
+}
+
+.fourths li:nth-child(4n + 1) {
+  margin-left: 0;
+  clear: both;
+}
+
+/*  GRID OF 2  */
+.halves li {
+  width: 49%;
+  margin: 0 2% 2% 0;
+}
+
+.halves li:nth-child(2n) {
+  margin-right: 0;
+}
+
+.halves li:nth-child(2n + 1) {
+  margin-left: 0;
+  clear: both;
+}
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+@media only screen and (max-width: 480px) {
+  .basic-grid li {
+    margin: 0 0 2% 0;
+  }
+  .thirds, .fourths, .halves {
+    width: 100%;
+  }
+}
+
+/**
+ *  Custom Styles for Give Donation Plugin
+ *  https://givewp.com
+ */
+body.single-give_forms div.entry-summary {
+  margin: 0;
+}
+
+body.single-give_forms .give-btn {
+  color: #333;
+}
+
+body.single-give_forms .give-submit {
+  color: #FFF;
+}
+
+body.single-give_forms form[id*="give"] fieldset {
+  margin-bottom: 0;
+}
+
+body.single-give_forms fieldset#give_terms_agreement {
+  padding-left: 0;
+}

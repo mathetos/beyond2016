@@ -18,10 +18,10 @@ $hidebottomsidebar = get_post_meta( $post->ID, 'hide-bottom-sidebar' );
 $hidefooter = get_post_meta( $post->ID, 'hide-footer' );
 
 
-if ($sidebar[0] == 'left') {
+if ($sidebar == 'left') {
   get_sidebar();
   $alignment = 'sidebar-left';
-} elseif ($sidebar[0] == 'right') {
+} elseif ($sidebar == 'right') {
   $alignment = 'sidebar-right';
 } else {
   $alignment = '';
