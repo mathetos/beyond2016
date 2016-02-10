@@ -13,7 +13,7 @@
 
 get_header();
 
-$sidebar = get_post_meta( $post->ID, 'beyond2016-sidebar-layout' );
+$sidebar = get_post_meta( $post->ID, 'beyond2016-sidebar-layout', true );
 $hidebottomsidebar = get_post_meta( $post->ID, 'hide-bottom-sidebar' );
 $hidefooter = get_post_meta( $post->ID, 'hide-footer' );
 
@@ -27,10 +27,9 @@ if ($sidebar == 'left') {
   $alignment = '';
 }
 ?>
-
 <div id="primary" class="content-area <?php echo $alignment; ?>">
 	<main id="main" class="site-main" role="main">
-		<?php
+    <?php
 		// Start the loop.
 		while ( have_posts() ) : the_post();
 
