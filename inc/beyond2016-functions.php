@@ -1,4 +1,7 @@
 <?php
+/* Admin Menus */
+require_once( BEYOND2016_PATH . '/inc/admin/admin-menus.php');
+
 /* MEDIA */
 add_image_size( 'recentposts', 390, 200, true );
 
