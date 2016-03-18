@@ -48,7 +48,10 @@ function beyond2016_body_classess($classes) {
       $classes[] = 'header-image-below';
    }
 	 global $post;
-	 $sidebar = get_post_meta( $post->ID, 'beyond2016-sidebar-layout' );
+
+    if (is_404() == false) {
+        $sidebar = get_post_meta($post->ID, 'beyond2016-sidebar-layout', true);
+    }
 
 	if ( is_page() && $sidebar == 'disable' ) {
 

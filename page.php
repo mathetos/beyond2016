@@ -14,8 +14,8 @@
 get_header();
 
 $sidebar = get_post_meta( $post->ID, 'beyond2016-sidebar-layout', true );
-$hidebottomsidebar = get_post_meta( $post->ID, 'hide-bottom-sidebar' );
-$hidefooter = get_post_meta( $post->ID, 'hide-footer' );
+$hidebottomsidebar = get_post_meta( $post->ID, 'hide-bottom-sidebar', true );
+$hidefooter = get_post_meta( $post->ID, 'hide-footer', true );
 
 
 if ($sidebar == 'left') {
@@ -48,7 +48,7 @@ if ($sidebar == 'left') {
 	</main><!-- .site-main -->
 
 	<?php
-  if ($hidebottomsidebar[0] == 'yes') {
+  if ($hidebottomsidebar == 'yes') {
     //display nothing here
   } else {
     get_sidebar( 'content-bottom' );
@@ -57,7 +57,7 @@ if ($sidebar == 'left') {
 </div><!-- .content-area -->
 
 <?php
-if ($sidebar[0] == 'right') {
+if ($sidebar == 'right') {
   get_sidebar();
 } ?>
 <?php get_footer(); ?>

@@ -13,12 +13,12 @@
 		</div><!-- .site-content -->
 <?php
 if ( is_page() ) {
-	$hidefooter = get_post_meta( $post->ID, 'hide-footer' );
+	$hidefooter = get_post_meta( $post->ID, 'hide-footer', true );
 } else {
 	$hidefooter = array('');
 }
 
-if ( $hidefooter[0] !== 'yes' ) {
+if ( $hidefooter !== 'yes' ) {
 ?>
 		<footer id="colophon" class="site-footer" role="contentinfo">
 			<?php if ( has_nav_menu( 'primary' ) ) : ?>
