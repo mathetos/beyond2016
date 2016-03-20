@@ -1,15 +1,19 @@
 /* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
-body.blog .clearfix:before,
-body.blog .clearfix:after {
+body.archive .clearfix:before,
+body.archive .clearfix:after,
+body.category .clearfix:before,
+body.category .clearfix:after {
     content: " ";
     display: table;
 }
 
-body.blog .clearfix:after {
+body.archive .clearfix:after,
+body.category .clearfix:after {
     clear: both;
 }
 
-body.blog .clearfix {
+body.archive .clearfix,
+body.category .clearfix {
     *zoom: 1;
 }
 

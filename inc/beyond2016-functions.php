@@ -86,7 +86,7 @@ function  beyond2016_recent_posts_function($args) {
 /* Enqueue Blog Grid Stlyes & Scripts */
 
 function beyond2016_archive_grid_scripts() {
-	if ( is_home() || is_front_page() ) {
+	if ( is_home() || is_front_page() || is_category() ) {
 
 		wp_enqueue_style( 'b16-grid-style', get_template_directory_uri() . '/assets/styles/archive-grid.css' );
 
@@ -99,7 +99,7 @@ function beyond2016_archive_grid_scripts() {
 add_action( 'wp_enqueue_scripts', 'beyond2016_archive_grid_scripts' );
 
 function beyond2016_print_archive_grid_init() {
-  if ( is_home() || is_front_page() ) {
+  if ( is_home() || is_front_page() || is_category() ) {
 ?>
 <script type="text/javascript">
 			jQuery(document).ready(function( $ ) {
@@ -109,4 +109,38 @@ function beyond2016_print_archive_grid_init() {
 <?php
   }
 }
+
+/*
+ *  Excludes Password Protected posts from the
+ *  Archive and Category loops.
+ *
+ */
+
 add_action( 'wp_footer', 'beyond2016_print_archive_grid_init' );
+
+function exclude_passworded_posts($post) {
+	global $post;
+	$b16ecom_exclude = post_password_required($post->ID);
+
+	if ($b16ecom_exclude == true) {
+		$excludepass = false;
+	} else {
+		$excludepass = true;
+	}
+	return apply_filters('exclude-passworded-posts', $excludepass);
+}
+
+function b16ecom_comment_count() {
+
+	global $post;
+	$commentsnum = wp_count_comments($post->ID);
+
+	if ($commentsnum->total_comments > 14) {
+		$popular = '<p style=quot;font-size: 80%; font-style: italics; quot;><span class=&quot;genericon genericon-digg&quot;></span>Popular Post :</p>';
+	} else {
+		$popular = '';
+	}
+
+	return $popular;
+
+}
