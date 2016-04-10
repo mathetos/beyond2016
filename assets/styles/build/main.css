@@ -270,8 +270,8 @@ blockquote {
   font-size: 1.1875rem;
   font-style: italic;
   line-height: 1.4736842105;
-  margin: 0 0 1.47368em;
-  padding: 0 0 0 1.26316em;
+  margin: 0 0 1.4736842105em;
+  padding: 0 0 0 1.263157895em;
 }
 
 blockquote,
@@ -1006,7 +1006,7 @@ a:active {
   font-family: Montserrat, "Helvetica Neue", sans-serif;
   font-size: 19px;
   font-size: 1.1875rem;
-  margin: 0 7.6923% 2.94737em;
+  margin: 0 7.6923% 2.947368421em;
   min-height: 56px;
   position: relative;
 }
@@ -1070,8 +1070,8 @@ a:active {
   display: none;
   letter-spacing: 0.013157895em;
   line-height: 1;
-  margin: 0 0.73684em 0 -0.73684em;
-  padding: 0.81579em 0.73684em 0.39474em;
+  margin: 0 0.7368421053em 0 -0.7368421053em;
+  padding: 0.8157894737em 0.7368421053em 0.3947368421em;
   text-transform: uppercase;
 }
 
@@ -1146,7 +1146,7 @@ a:active {
   font-size: 13px;
   font-size: 0.8125rem;
   line-height: 1.6153846154;
-  margin: 0 7.6923% 2.15385em;
+  margin: 0 7.6923% 2.1538461538em;
   padding: 1.0769230769em 0;
 }
 
@@ -1172,7 +1172,7 @@ a:active {
   content: "\002f";
   display: inline-block;
   opacity: 0.7;
-  padding: 0 0.53846em;
+  padding: 0 0.538461538em;
 }
 
 /**
@@ -1241,11 +1241,11 @@ a:active {
 }
 
 blockquote.alignleft {
-  margin: 0.31579em 1.47368em 1.47368em 0;
+  margin: 0.3157894737em 1.4736842105em 1.473684211em 0;
 }
 
 blockquote.alignright {
-  margin: 0.31579em 0 1.47368em 1.47368em;
+  margin: 0.3157894737em 0 1.473684211em 1.4736842105em;
 }
 
 blockquote.aligncenter {
@@ -1857,11 +1857,11 @@ body:not(.search-results) .entry-summary blockquote > :last-child {
 }
 
 body:not(.search-results) .entry-summary .alignleft {
-  margin: 0.26316em 1.47368em 1.47368em 0;
+  margin: 0.2631578947em 1.4736842105em 1.4736842105em 0;
 }
 
 body:not(.search-results) .entry-summary .alignright {
-  margin: 0.26316em 0 1.47368em 1.47368em;
+  margin: 0.2631578947em 0 1.4736842105em 1.4736842105em;
 }
 
 body:not(.search-results) .entry-summary .aligncenter {
@@ -1949,12 +1949,12 @@ body:not(.search-results) .entry-summary > :last-child,
   content: "\002f";
   display: inline-block;
   opacity: 0.7;
-  padding: 0 0.53846em;
+  padding: 0 0.538461538em;
 }
 
 .entry-footer .avatar {
   height: 21px;
-  margin: -0.15385em 0.53846em 0 0;
+  margin: -0.1538461538em 0.5384615385em 0 0;
   width: 21px;
 }
 
@@ -2015,7 +2015,7 @@ body.search-no-results .page-header {
 }
 
 .taxonomy-description p {
-  margin: 0.53846em 0 1.61538em;
+  margin: 0.5384615385em 0 1.6153846154em;
 }
 
 .taxonomy-description > :last-child {
@@ -2215,7 +2215,7 @@ body.search-no-results .page-header {
   content: "\002f";
   display: inline-block;
   opacity: 0.7;
-  padding: 0 0.53846em;
+  padding: 0 0.538461538em;
 }
 
 .comment-content ul,
@@ -2238,7 +2238,7 @@ body.search-no-results .page-header {
   font-size: 0.8125rem;
   line-height: 1;
   margin-top: 2.1538461538em;
-  padding: 0.53846em 0.53846em 0.46154em;
+  padding: 0.5384615385em 0.5384615385em 0.4615384615em;
 }
 
 .comment-reply-link:hover,
@@ -2376,7 +2376,7 @@ body.no-sidebar .comments-area {
   display: inline-block;
   font-family: Montserrat, sans-serif;
   opacity: 0.7;
-  padding: 0 0.30769em 0 0.53846em;
+  padding: 0 0.307692308em 0 0.538461538em;
 }
 
 body.no-sidebar .entry-footer,
@@ -2506,7 +2506,7 @@ p > video {
  * 12.2 - Galleries
  */
 .gallery {
-  margin: 0 -1.16667% 1.75em;
+  margin: 0 -1.1666667% 1.75em;
 }
 
 .gallery-item {
@@ -2625,7 +2625,7 @@ p > video {
 }
 
 .widecolumn .mu_register label {
-  margin: 2.15385em 0.76923em 0.53846em 0;
+  margin: 2.1538461538em 0.7692307692em 0.5384615385em 0;
 }
 
 .widecolumn .mu_register label strong {
@@ -2856,7 +2856,7 @@ body.error404 .site-footer {
     margin: 1.3125em 0;
   }
   .pagination {
-    margin: 0 23.0769% 4.42105em 7.6923%;
+    margin: 0 23.0769% 4.421052632em 7.6923%;
   }
   .post-navigation {
     margin-bottom: 5.25em;
@@ -3204,7 +3204,7 @@ body.error404 .site-footer {
   .widget input[type="tel"],
   .widget input[type="number"],
   .widget textarea {
-    padding: 0.46154em 0.53846em;
+    padding: 0.4615384615em 0.5384615385em;
   }
   .widget h1 {
     font-size: 23px;
@@ -3233,10 +3233,10 @@ body.error404 .site-footer {
     margin-bottom: 0.9130434783em;
   }
   .widget .alignleft {
-    margin: 0.23077em 1.61538em 1.61538em 0;
+    margin: 0.2307692308em 1.6153846154em 1.6153846154em 0;
   }
   .widget .alignright {
-    margin: 0.23077em 0 1.61538em 1.61538em;
+    margin: 0.2307692308em 0 1.6153846154em 1.6153846154em;
   }
   .widget .aligncenter {
     margin-bottom: 1.6153846154em;
@@ -3264,8 +3264,8 @@ body.error404 .site-footer {
     width: 35px;
   }
   .tagcloud a {
-    margin: 0 0.23077em 0.53846em 0;
-    padding: 0.53846em 0.46154em 0.46154em;
+    margin: 0 0.2307692308em 0.5384615385em 0;
+    padding: 0.5384615385em 0.4615384615em 0.4615384615em;
   }
   .textwidget h1 {
     margin-top: 1.8260869565em;
@@ -3315,7 +3315,7 @@ body.error404 .site-footer {
     order: 2;
   }
   .site-info {
-    margin: 0.53846em auto 0.53846em 0;
+    margin: 0.538461538em auto 0.538461538em 0;
     -webkit-order: 1;
     -ms-flex-order: 1;
     -webkit-box-ordinal-group: 2;
@@ -3518,7 +3518,7 @@ body.error404 .site-footer {
   body:not(.search-results) article:not(.type-page) .entry-footer .avatar {
     display: block;
     height: auto;
-    margin: 0 0 0.53846em;
+    margin: 0 0 0.5384615385em;
     width: 49px;
   }
   body.no-sidebar:not(.search-results) article:not(.type-page) .entry-content {
@@ -3569,7 +3569,7 @@ body.error404 .site-footer {
     font-size: 23px;
     font-size: 1.4375rem;
     line-height: 1.5217391304;
-    margin: 0 0 1.52174em;
+    margin: 0 0 1.5217391304em;
     padding-left: 1.347826087em;
   }
   body:not(.search-results) .entry-summary blockquote:not(.alignleft):not(.alignright) {
@@ -3626,10 +3626,10 @@ body.error404 .site-footer {
     margin-top: 0;
   }
   body:not(.search-results) .entry-summary .alignleft {
-    margin: 0.26087em 1.52174em 1.52174em 0;
+    margin: 0.2608695652em 1.5217391304em 1.5217391304em 0;
   }
   body:not(.search-results) .entry-summary .alignright {
-    margin: 0.26087em 0 1.52174em 1.52174em;
+    margin: 0.2608695652em 0 1.5217391304em 1.5217391304em;
   }
   body:not(.search-results) .entry-summary .aligncenter {
     margin-bottom: 1.5217391304em;

@@ -48,11 +48,12 @@ if ($sidebar == 'left') {
 	</main><!-- .site-main -->
 
 	<?php
-  if ($hidebottomsidebar == 'yes') {
-    //display nothing here
-  } else {
-    get_sidebar( 'content-bottom' );
-  } ?>
+		if ($hidebottomsidebar == 'yes') {
+		//display nothing here
+		} else {
+		get_sidebar( 'content-bottom' );
+		} 
+	?>
 
 </div><!-- .content-area -->
 

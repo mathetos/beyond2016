@@ -12,7 +12,7 @@
 
 		</div><!-- .site-content -->
 <?php
-if ( is_page() ) {
+if ( is_page() || is_singular('give_forms') ) {
 	$hidefooter = get_post_meta( $post->ID, 'hide-footer', true );
 } else {
 	$hidefooter = array('');

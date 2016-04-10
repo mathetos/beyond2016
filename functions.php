@@ -357,6 +357,7 @@ add_filter( 'body_class', 'beyond2016_body_classes' );
  * @return array Array containing RGB (red, green, and blue) values for the given
  *               HEX code, empty array otherwise.
  */
+
 function beyond2016_hex2rgb( $color ) {
 	$color = trim( $color, '#' );
 
