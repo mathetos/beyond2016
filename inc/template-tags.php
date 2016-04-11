@@ -171,7 +171,6 @@ if ( ! function_exists( 'beyond2016_excerpt' ) ) :
 				<?php
 					global $post;
 					$yoastdesc = get_post_meta(get_the_ID(), '_yoast_wpseo_metadesc', true);
-					//$excerptlength = get_theme_mod('excerpt_length', 25);
 					$excerpt = get_the_excerpt();
 					$content = get_the_content($post->ID);
 
