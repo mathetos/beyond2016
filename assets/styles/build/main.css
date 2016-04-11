@@ -1554,6 +1554,47 @@ blockquote:after,
   max-width: 200px;
 }
 
+body.header-center .site-icon {
+  margin: 0 auto;
+  margin-top: 1em;
+}
+
+body.header-center .site-header {
+  text-align: center;
+}
+
+body.header-center .site-header .site-header-main {
+  padding: 20px 0 0 0;
+  background-repeat: no-repeat;
+}
+
+body.header-center .site-header .site-branding {
+  width: 100%;
+  float: none;
+  margin: 0 auto;
+}
+
+body.header-center .site-header .menu-toggle {
+  margin: 1.3125em auto;
+}
+
+body.header-center .site-header .site-header-menu.toggled-on {
+  background-color: #eee;
+}
+
+body.header-center .site-header .main-navigation .menu-item-has-children > a {
+  margin-right: 0;
+}
+
+body.header-center .site-header .main-navigation ul ul {
+  margin-left: 0;
+}
+
+body.header-center .site-header .social-navigation li {
+  float: none;
+  display: inline-block;
+}
+
 @media screen and (min-width: 44.375em) {
   body.header-center .page-header {
     margin-right: 7.6923%;
@@ -2675,7 +2716,8 @@ p > video {
 .by16-section {
   clear: both;
   padding: 0px;
-  margin: 0px;
+  margin: 0 7%;
+  overflow: hidden;
 }
 
 /* Sidebar Alignments */
@@ -2735,6 +2777,12 @@ p > video {
   .by16-col {
     margin: 1% 0 1% 0%;
     width: 100%;
+  }
+}
+
+@media screen and (min-width: 56.875em) {
+  .by16-section {
+    margin: 0;
   }
 }
 

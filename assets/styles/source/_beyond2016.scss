@@ -4,7 +4,8 @@
 .by16-section {
 	clear: both;
 	padding: 0px;
-	margin: 0px;
+	margin: 0 7%;
+	overflow: hidden;
 }
 
 /* Sidebar Alignments */
@@ -48,4 +49,10 @@
 /*  GO FULL WIDTH BELOW 480 PIXELS */
 @media only screen and (max-width: 480px) {
 	.by16-col {  margin: 1% 0 1% 0%; width: 100%;}
+}
+
+@media screen and (min-width: 56.875em) {
+	.by16-section {
+		margin: 0;
+	}
 }

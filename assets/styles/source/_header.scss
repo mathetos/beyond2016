@@ -109,6 +109,47 @@
   max-width: 200px;
 }
 
+body.header-center {
+    .site-icon {
+      margin: 0 auto;
+      margin-top: 1em;
+    }
+    .site-header {
+      text-align: center;
+
+      .site-header-main {
+        padding: 20px 0 0 0;
+        background-repeat: no-repeat;
+      }
+
+      .site-branding {
+        width: 100%;
+        float: none;
+        margin: 0 auto;
+      }
+
+      .menu-toggle {
+        margin: 1.3125em auto;
+      }
+
+      .site-header-menu.toggled-on {
+        background-color: #eee;
+      }
+      .main-navigation .menu-item-has-children > a {
+        margin-right: 0;
+      }
+
+      .main-navigation ul ul {
+        margin-left: 0;
+      }
+
+      .social-navigation li {
+        float: none;
+        display: inline-block;
+      }
+    }
+  }
+
 @media screen and (min-width: 44.375em) {
   body.header-center {
     .page-header {
