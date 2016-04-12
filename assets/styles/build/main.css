@@ -1295,6 +1295,16 @@ blockquote:after,
   clear: both;
 }
 
+.widget-area {
+  margin: 0 4%;
+}
+
+@media screen and (min-width: 56.875em) {
+  .widget-area {
+    margin: 0 0 1.35em;
+  }
+}
+
 /**
  * 10.0 - Widgets
  */
@@ -2433,22 +2443,7 @@ footer.site-footer .site-info {
 }
 
 footer.site-footer .site-info p.credits {
-  display: inline-block;
-  float: left;
   margin: 0 2em 0 0;
-  position: absolute;
-  left: 0;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-
-footer.site-footer .f-text,
-footer.site-footer .copyright {
-  display: inline-block;
-  float: left;
-  padding: 0 0 0 65px;
 }
 
 /**

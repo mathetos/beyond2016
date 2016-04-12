@@ -438,3 +438,6 @@ add_filter( 'wp_get_attachment_image_attributes', 'beyond2016_post_thumbnail_siz
 
 include_once('inc/beyond2016-functions.php');
 include_once('inc/metaboxes.php');
+
+
+

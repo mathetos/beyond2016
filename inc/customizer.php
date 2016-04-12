@@ -79,6 +79,7 @@ function beyond2016_header_style() {
 	// If the header text has been hidden.
 	?>
 	<style type="text/css" id="beyond2016-header-css">
+		<!-- added via inc/customizer.php --> 
 		.site-branding {
 			margin: 0 auto 0 0;
 		}
@@ -438,7 +439,9 @@ function beyond2016_get_color_scheme_css( $colors ) {
 		'secondary_text_color'  => '',
 		'border_color'          => '',
 	) );
-
+	$color_scheme = beyond2016_get_color_scheme();
+	$color_textcolor_rgb = beyond2016_hex2rgb( $color_scheme[3] );
+	
 	return <<<CSS
 	/* Color Scheme */
 
@@ -609,6 +612,10 @@ function beyond2016_get_color_scheme_css( $colors ) {
 	.pagination .next,
 	.page-links a {
 		background-color: {$colors['main_text_color']};
+	}
+
+	div.toggled-on ul:not(#menu-social-menu) li {
+		background-color: {$colors['secondary_text_color']};
 	}
 
 	/* Secondary Text Color */

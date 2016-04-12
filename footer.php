@@ -47,7 +47,6 @@ if ( $hidefooter !== 'yes' ) {
 			<?php endif; ?>
 
 			<div class="site-info">
-				<p class="credits">
 				<?php
 					/**
 					 * Fires before the beyond2016 footer text for footer customization.
@@ -65,16 +64,16 @@ if ( $hidefooter !== 'yes' ) {
 					<?php }
 
 					if ( !empty($footertext) ) {
-						echo '<div class="f-text">' . $footertext . '</div>';
+						echo '<p class="credits">' . $footertext . '</p>';
 					}	else {
 				?>
 
-				<span class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span>
+				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'beyond2016' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'beyond2016' ), 'WordPress' ); ?></a>
 				<?php }
 
  				  if ( $copyright == 'yes') {
-						$defaultcpyrt = '<span class="copyright">Copyright &copy; ' . date("Y") . '&nbsp;' . get_bloginfo('name') . '</span>';
+						$defaultcpyrt = '<p class="copyright">Copyright &copy; ' . date("Y") . '&nbsp;' . get_bloginfo('name') . '</p>';
 
 						echo apply_filters('beyond2016_copyright', $defaultcpyrt);
 					}
