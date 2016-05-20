@@ -614,10 +614,6 @@ function beyond2016_get_color_scheme_css( $colors ) {
 		background-color: {$colors['main_text_color']};
 	}
 
-	div.toggled-on ul:not(#menu-social-menu) li {
-		background-color: {$colors['secondary_text_color']};
-	}
-
 	/* Secondary Text Color */
 
 	/**

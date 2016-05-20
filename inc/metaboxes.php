@@ -10,19 +10,23 @@
   *  for adding a FooGallery to your Single Download page
   */
 
-function beyond2016_page_layout_metaboxes( $post ) {
+function beyond2016_page_layout_metaboxes() {
 
-add_meta_box(
-    'beyond2016_page_layout_options',      // Unique ID
-    __( 'Page Layout Options', 'beyond2016' ),    // Title
-    'beyond2016_page_layout_options',   // Callback function
-    'page',
-    'side',         // Context
-    'core'         // Priority
-  );
+$post_types = apply_filters( 'b16_cpt_metabox_support', array('page') );
+
+  foreach ($post_types as $post_type) {
+    add_meta_box(
+      'beyond2016_page_layout_options',      // Unique ID
+      __( 'Page Layout Options', 'beyond2016' ),    // Title
+      'beyond2016_page_layout_options',   // Callback function
+      $post_type,
+      'side',         // Context
+      'core'         // Priority
+    );
+  }
 }
 
-add_action( 'add_meta_boxes_page', 'beyond2016_page_layout_metaboxes', 10, 2 );
+add_action( 'add_meta_boxes', 'beyond2016_page_layout_metaboxes', 10 );
 
 
 /* Display the post meta box. */
@@ -107,4 +111,4 @@ function beyond2016_page_layout_options( $post )
 
 }
 
-add_action( 'save_post_page', 'save_beyond2016_page_layout_options', 10, 3 );
+add_action( 'save_post', 'save_beyond2016_page_layout_options', 10, 3 );

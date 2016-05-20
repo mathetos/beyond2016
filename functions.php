@@ -136,7 +136,9 @@ add_action( 'after_setup_theme', 'beyond2016_setup' );
  * @since Beyond 2016 1.0
  */
 function beyond2016_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'beyond2016_content_width', 840 );
+	if ( ! empty( $GLOBALS['content_width'] ) ) {
+		$GLOBALS['content_width'] = apply_filters( 'beyond2016_content_width', 840 );
+	}
 }
 add_action( 'after_setup_theme', 'beyond2016_content_width', 0 );
 
