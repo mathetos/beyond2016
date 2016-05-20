@@ -93,7 +93,6 @@ figure {
 }
 
 hr {
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
 }
 
@@ -151,7 +150,6 @@ input::-moz-focus-inner {
 
 input[type="checkbox"],
 input[type="radio"] {
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   margin-right: 0.4375em;
   padding: 0;
@@ -374,14 +372,13 @@ big {
  * 4.0 - Elements
  */
 html {
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 *,
 *:before,
 *:after {
-  -moz-box-sizing: inherit;
+  /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
   box-sizing: inherit;
 }
 
@@ -480,6 +477,11 @@ td {
 
 /* Placeholder text color -- selectors need to be separate to work. */
 ::-webkit-input-placeholder {
+  color: #686868;
+  font-family: Montserrat, "Helvetica Neue", sans-serif;
+}
+
+:-moz-placeholder {
   color: #686868;
   font-family: Montserrat, "Helvetica Neue", sans-serif;
 }
@@ -607,7 +609,6 @@ textarea:focus {
 
 input[type="search"].search-field {
   border-radius: 2px 0 0 2px;
-  width: -webkit-calc(100% - 42px);
   width: calc(100% - 42px);
 }
 
@@ -691,9 +692,7 @@ a:active {
  */
 .site-header-menu {
   display: none;
-  -webkit-flex: 0 1 100%;
   -ms-flex: 0 1 100%;
-  -webkit-box-flex: 0;
   flex: 0 1 100%;
   margin: 0.875em 0;
 }
@@ -1464,15 +1463,10 @@ blockquote:after,
 }
 
 .site-header-main {
-  -webkit-align-items: center;
   -ms-flex-align: center;
-  -webkit-box-align: center;
   align-items: center;
-  display: -webkit-flex;
   display: -ms-flexbox;
-  display: -webkit-box;
   display: flex;
-  -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
@@ -1644,17 +1638,12 @@ body.header-center .site-header .social-navigation li {
   body.header-image-behind.header-left .hasicon .site-title {
     position: absolute;
     top: 48%;
-    -webkit-transform: translateY(-48%);
-    -ms-transform: translateY(-48%);
     transform: translateY(-48%);
     left: 250px;
   }
   body.header-image-behind.header-left .hasicon .site-description {
     position: absolute;
-    top: -webkit-calc(48% + 1.5em);
     top: calc(48% + 1.5em);
-    -webkit-transform: translateY(-48%);
-    -ms-transform: translateY(-48%);
     transform: translateY(-48%);
     left: 250px;
   }
@@ -1856,7 +1845,6 @@ a.post-thumbnail:focus {
 .entry-title,
 .comments-title {
   -webkit-hyphens: auto;
-  -moz-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto;
 }
@@ -2790,7 +2778,7 @@ body.error404 .site-footer {
   margin: 0 auto;
 }
 
-.error404-recent-posts {
+div[class*="recent-posts"] {
   text-align: center;
   padding-right: 0;
   padding-left: 0;
@@ -2798,21 +2786,21 @@ body.error404 .site-footer {
   margin: 3em auto 0;
 }
 
-.error404-recent-posts h3 {
+div[class*="recent-posts"] h3 {
   text-align: left;
   margin-bottom: 1em;
   font-style: italic;
 }
 
-.error404-recent-posts .genericon {
+div[class*="recent-posts"] .genericon {
   vertical-align: middle;
 }
 
-.error404-recent-posts h4 {
+div[class*="recent-posts"] h4 {
   margin: 0.6em 0;
 }
 
-.error404-recent-posts p {
+div[class*="recent-posts"] p {
   margin-top: 0.6em;
   margin-bottom: 0;
   font-size: 90%;
@@ -2942,7 +2930,6 @@ body.error404 .site-footer {
   .entry-content blockquote.alignright {
     border-width: 4px 0 0 0;
     padding: 0.9473684211em 0 0;
-    width: -webkit-calc(50% - 0.736842105em);
     width: calc(50% - 0.736842105em);
   }
   .entry-content blockquote:not(.alignleft):not(.alignright),
@@ -3033,16 +3020,13 @@ body.error404 .site-footer {
     padding-left: 4.5455%;
   }
   .site-header-main {
-    -webkit-align-items: flex-start;
     -ms-flex-align: start;
-    -webkit-box-align: start;
-    align-items: flex-start;
+    -ms-grid-row-align: flex-start;
+        align-items: flex-start;
   }
   .site-header-menu {
     display: block;
-    -webkit-flex: 0 1 auto;
     -ms-flex: 0 1 auto;
-    -webkit-box-flex: 0;
     flex: 0 1 auto;
   }
   .main-navigation {
@@ -3132,8 +3116,6 @@ body.error404 .site-footer {
   .main-navigation ul ul .menu-item-has-children > a:after {
     right: 0.5625em;
     top: 0.875em;
-    -webkit-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
     transform: rotate(90deg);
   }
   .dropdown-toggle,
@@ -3293,7 +3275,6 @@ body.error404 .site-footer {
     margin-bottom: 1.615384615em;
   }
   .widget input[type="search"].search-field {
-    width: -webkit-calc(100% - 35px);
     width: calc(100% - 35px);
   }
   .widget .search-submit:before {
@@ -3337,31 +3318,22 @@ body.error404 .site-footer {
     margin-right: 0;
   }
   .site-footer {
-    -webkit-align-items: center;
     -ms-flex-align: center;
-    -webkit-box-align: center;
     align-items: center;
-    display: -webkit-flex;
     display: -ms-flexbox;
-    display: -webkit-box;
     display: flex;
-    -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     padding: 0 4.5455% 3.5em;
   }
   .site-footer .social-navigation {
     margin: 0;
-    -webkit-order: 2;
     -ms-flex-order: 2;
-    -webkit-box-ordinal-group: 3;
     order: 2;
   }
   .site-info {
     margin: 0.538461538em auto 0.538461538em 0;
-    -webkit-order: 1;
     -ms-flex-order: 1;
-    -webkit-box-ordinal-group: 2;
     order: 1;
   }
   .no-sidebar .content-area {
@@ -3517,7 +3489,6 @@ body.error404 .site-footer {
   }
   body:not(.search-results) article:not(.type-page) .entry-content > blockquote.alignleft.below-entry-meta {
     margin-left: -40%;
-    width: -webkit-calc(60% - 1.4736842105em);
     width: calc(60% - 1.4736842105em);
   }
   body:not(.search-results) article:not(.type-page) img.below-entry-meta,
@@ -3885,7 +3856,6 @@ body.error404 .site-footer {
   .entry-content blockquote.alignright {
     border-width: 4px 0 0 0;
     padding: 0.9473684211em 0 0;
-    width: -webkit-calc(50% - 0.736842105em);
     width: calc(50% - 0.736842105em);
   }
   body:not(.search-results) .entry-header + .entry-summary {
@@ -3938,7 +3908,6 @@ body.error404 .site-footer {
 /*Normalization*/
 .basic-grid, .basic-grid article,
 .basic-grid li {
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   line-height: 0;
 }
@@ -3961,7 +3930,6 @@ body.error404 .site-footer {
   display: block;
   float: left;
   padding: 0;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -4055,4 +4023,18 @@ body.single-give_forms form[id*="give"] fieldset {
 
 body.single-give_forms fieldset#give_terms_agreement {
   padding-left: 0;
+}
+
+/**
+ * 1.0 - Author
+ *
+ */
+@media screen and (min-width: 61.5625em) {
+  body.author:not(.search-results) article:not(.type-page) .entry-content {
+    float: none;
+    margin-right: 0;
+    margin-left: 0;
+    width: 100%;
+    padding: 0;
+  }
 }

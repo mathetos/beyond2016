@@ -65,23 +65,26 @@ function beyond2016_body_classess($classes) {
 
 /*Recent Posts Action*/
 
-add_action('beyond2016_recent_posts', 'beyond2016_recent_posts_function', 9, 1);
+function  beyond2016_recent_posts_function( $args, $postsheading = 'Maybe you\'re looking for a recent post?' ) {
 
-function  beyond2016_recent_posts_function($args) {
 		$beyond2016_404_recent_posts = wp_get_recent_posts( $args );
 		?>
-		<h3>Maybe you're looking for a recent post?</h3>
+
+		<h3><?php echo $postsheading; ?></h3>
 		<div class="by16-section by16-group">
 
-		<?php
-		foreach( $beyond2016_404_recent_posts as $recent ){
+			<?php
+			foreach( $beyond2016_404_recent_posts as $recent ){
 				include(locate_template('template-parts/recent-posts.php') );
 			}
-		//endforeach;
-		?>
-	</div>
+
+			?>
+
+		</div>
 	<?php
 }
+
+add_action('beyond2016_recent_posts', 'beyond2016_recent_posts_function', 10, 2);
 
 /* Enqueue Blog Grid Stlyes & Scripts */
 

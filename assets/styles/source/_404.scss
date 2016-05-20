@@ -7,7 +7,7 @@ body.error404 .site-footer {
     margin: 0 auto;
 }
 
-.error404-recent-posts {
+div[class*="recent-posts"] { 
   text-align: center;
   padding-right: 0;
   padding-left: 0;

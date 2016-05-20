@@ -1,27 +1,28 @@
 {
-  "name": "matt2016",
+  "name": "beyond2016",
   "version": "1.0.0",
-  "description": "A twentysixteen child theme to take twentysixteen where twentysixteen has never gone before.",
+  "description": "Taking the WordPress Twenty Sixteen theme to new heights.",
   "author": "Matt Cromwell <reachme@mattcromwell.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mathetos/matt2016"
+    "url": "https://github.com/mathetos/beyond2016"
   },
   "dependencies": {},
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-autoprefixer": "0.0.6",
-    "gulp-cache": "^0.1.11",
-    "gulp-concat": "^2.1.7",
-    "gulp-imagemin": "^0.1.5",
-    "gulp-jshint": "^1.3.4",
-    "gulp-livereload": "^0.3.2",
-    "gulp-load-plugins": "^0.2.0",
-    "gulp-minify-css": "^0.2.0",
+    "gulp-autoprefixer": "3.1.0",
+    "gulp-cache": "^0.4.5",
+    "gulp-clean-css": "^2.0.7",
+    "gulp-concat": "^2.6.0",
+    "gulp-imagemin": "^3.0.1",
+    "gulp-jshint": "^2.0.1",
+    "gulp-livereload": "^3.8.1",
+    "gulp-load-plugins": "^1.2.2",
     "gulp-notify": "^2.2.0",
-    "gulp-rename": "^0.2.2",
-    "gulp-sass": "^2.0.4",
-    "gulp-uglify": "^0.2.1",
-    "tiny-lr": "0.0.5"
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.1",
+    "gulp-uglify": "^1.5.3",
+    "gulp-watch": "^4.3.5"
   }
 }

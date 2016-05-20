@@ -1,0 +1,16 @@
+/**
+ * 1.0 - Author
+ *
+ */
+
+@media screen and (min-width: 61.5625em) {
+	
+	body.author:not(.search-results) article:not(.type-page) .entry-content {
+		float: none;
+		margin-right: 0;
+		margin-left: 0;
+		width: 100%;
+		padding: 0;
+	}
+
+}
