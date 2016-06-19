@@ -21,6 +21,8 @@
 		<?php
 			the_content();
 
+			apply_filters('beyond2016_after_content_single', '');
+
 			wp_link_pages( array(
 				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'beyond2016' ) . '</span>',
 				'after'       => '</div>',

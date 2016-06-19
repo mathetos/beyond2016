@@ -89,7 +89,7 @@ add_action('beyond2016_recent_posts', 'beyond2016_recent_posts_function', 10, 2)
 /* Enqueue Blog Grid Stlyes & Scripts */
 
 function beyond2016_archive_grid_scripts() {
-	if ( is_home() || is_front_page() || is_category() ) {
+	if ( is_home() || is_front_page() || is_category() || is_archive() ) {
 
 		wp_enqueue_style( 'b16-grid-style', get_template_directory_uri() . '/assets/styles/archive-grid.css' );
 
@@ -102,24 +102,24 @@ function beyond2016_archive_grid_scripts() {
 add_action( 'wp_enqueue_scripts', 'beyond2016_archive_grid_scripts' );
 
 function beyond2016_print_archive_grid_init() {
-  if ( is_home() || is_front_page() || is_category() ) {
+  if ( is_home() || is_front_page() || is_category() || is_archive() ) {
 ?>
 <script type="text/javascript">
-			jQuery(document).ready(function( $ ) {
-				Grid.init();
-			});
+	jQuery(document).ready(function( $ ) {
+		Grid.init();
+	});
 </script>
 <?php
   }
 }
+
+add_action( 'wp_footer', 'beyond2016_print_archive_grid_init' );
 
 /*
  *  Excludes Password Protected posts from the
  *  Archive and Category loops.
  *
  */
-
-add_action( 'wp_footer', 'beyond2016_print_archive_grid_init' );
 
 function exclude_passworded_posts($post) {
 	global $post;

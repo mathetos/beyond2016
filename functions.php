@@ -2,18 +2,13 @@
 /**
  * Beyond 2016 Theme Functions
  */
-// Temp functions (remove before pushing to repo)
-define( 'JETPACK_DEV_DEBUG', true);
-add_theme_support( 'customize-partial-refresh-widgets' );
-add_filter( 'customize_widget_partial_refreshable', '__return_true' );
 
 //Globals
+$themeinfo = wp_get_theme();
+
 define( 'BEYOND2016_PATH', get_template_directory( __FILE__ ) );
 define( 'BEYOND2016_URL', get_template_directory_uri( __FILE__ ) );
-define( 'BEYOND2016_VERSION', 0.9 );
-
-//include_once('inc/customizer_settings.php');
-//include_once('inc/customizer_functions.php');
+define( 'BEYOND2016_VERSION', $themeinfo->get( 'Version') );
 
 /*
  * Enqueue the main.css
