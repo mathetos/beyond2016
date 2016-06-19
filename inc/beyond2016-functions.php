@@ -1,7 +1,7 @@
 <?php
 
 /* TGM Plugin Activation */
-require_once BEYOND2016_PATH . '/lib//tgm/class-tgm-plugin-activation.php';
+require_once BEYOND2016_PATH . '/lib/tgm/class-tgm-plugin-activation.php';
 
 add_action( 'tgmpa_register', 'beyond2016_register_required_plugins' );
 
