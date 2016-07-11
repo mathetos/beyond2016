@@ -541,13 +541,14 @@ function beyond2016_get_color_scheme_css( $colors ) {
 		color: {$colors['link_color']};
 	}
 
-	.background-color {background: {$colors['background_color']}}
-	.page-background-color {background: {$colors['page_background_color']}}
-	.link-text-color {color: {$colors['link_color']}}
-	.main-text-color {color: {$colors['main_text_color']}}
-	.secondary-text-color {color: {$colors['secondary_text_color']}}
-	.border-color {border-color: {$colors['border_color']}}
-	.title-text-color {border-color: {$colors['content_title_color']}}
+	.back-as-back {background: {$colors['background_color']}}
+	.page-as-back {background: {$colors['page_background_color']}}
+	.link-as-color {color: {$colors['link_color']}}
+	.main-as-color {color: {$colors['main_text_color']}}
+	.secondary-as-color {color: {$colors['secondary_text_color']}}
+	.border-as-border {border-color: {$colors['border_color']}}
+	.title-as-color {color: {$colors['content_title_color']}}
+	.title-as-border {border-color: {$colors['content_title_color']} !important;}
 
 	mark,
 	ins,

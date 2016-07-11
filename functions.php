@@ -10,28 +10,6 @@ define( 'BEYOND2016_PATH', get_template_directory( __FILE__ ) );
 define( 'BEYOND2016_URL', get_template_directory_uri( __FILE__ ) );
 define( 'BEYOND2016_VERSION', $themeinfo->get( 'Version') );
 
-/**
- *
- *		All Function Includes
- *
- **/
-
-//Custom template tags for this theme.
-require get_template_directory() . '/inc/template-tags.php';
-
-// Customizer additions.
-require get_template_directory() . '/inc/customizer.php';
-
-//Beyond 2016 only works in WordPress 4.4 or later.
-if ( version_compare( $GLOBALS['wp_version'], '4.4-alpha', '<' ) ) {
-	require get_template_directory() . '/inc/back-compat.php';
-}
-
-//Add Custom Functions
-require get_template_directory() . '/inc/beyond2016-functions.php';
-require get_template_directory() . '/inc/metaboxes.php';
-require get_template_directory() . '/inc/admin/editor-styles.php';
-
 /*
  * Enqueue the main.css
  *
@@ -51,6 +29,13 @@ function beyond2016_theme_enqueue_styles() {
 }
 
 // ORIGINAL functions
+
+/**
+ * Beyond 2016 only works in WordPress 4.4 or later.
+ */
+if ( version_compare( $GLOBALS['wp_version'], '4.4-alpha', '<' ) ) {
+	require get_template_directory() . '/inc/back-compat.php';
+}
 
 if ( ! function_exists( 'beyond2016_setup' ) ) :
 /**
@@ -132,6 +117,7 @@ function beyond2016_setup() {
 	 * specifically font, colors, icons, and column width.
 	 */
 	add_editor_style( 'assets/styles/editor-style.css' );
+
 }
 endif; // beyond2016_setup
 add_action( 'after_setup_theme', 'beyond2016_setup' );
@@ -389,6 +375,16 @@ function beyond2016_hex2rgb( $color ) {
 }
 
 /**
+ * Custom template tags for this theme.
+ */
+require get_template_directory() . '/inc/template-tags.php';
+
+/**
+ * Customizer additions.
+ */
+require get_template_directory() . '/inc/customizer.php';
+
+/**
  * Add custom image sizes attribute to enhance responsive image functionality
  * for content images
  *
@@ -434,3 +430,13 @@ function beyond2016_post_thumbnail_sizes_attr( $attr, $attachment, $size ) {
 	return $attr;
 }
 add_filter( 'wp_get_attachment_image_attributes', 'beyond2016_post_thumbnail_sizes_attr', 10 , 3 );
+
+
+/*Add Custom Functions */
+
+include_once('inc/beyond2016-functions.php');
+include_once('inc/metaboxes.php');
+include_once(get_template_directory() . '/inc/admin/editor-styles.php');
+
+
+

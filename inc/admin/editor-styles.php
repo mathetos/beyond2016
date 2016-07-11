@@ -28,7 +28,7 @@ function beyond2016_mce_before_init_insert_formats( $init_array ) {
 		array(  
 			'title' => 'Block Text',  
 			'block' => 'p',  
-			'classes' => array('block-text', 'secondary-text-color', 'border-color'),
+			'classes' => array('block-text', 'main-as-color', 'title-as-border'),
 			'wrapper' => false,
 		),  
 	);  
@@ -47,7 +47,7 @@ add_filter( 'tiny_mce_before_init', 'beyond2016_mce_before_init_insert_formats' 
  *  backend and frontend
  */
 function beyond2016_typography_scripts() {
-	wp_enqueue_style( 'beyond2016-typography', BEYOND2016_URL . '/assets/styles/typography.css' );
+	wp_enqueue_style( 'beyond2016-typography', get_template_directory_uri() . '/assets/styles/typography.css', array('beyond2016-main'), BEYOND2016_VERSION, 'all' );
 }
 add_action( 'wp_enqueue_scripts', 'beyond2016_typography_scripts' );
 
@@ -70,4 +70,6 @@ function beyond2016_is_edit_page( $new_edit = null ){
         	return in_array( $pagenow, array( 'post.php', 'post-new.php' ) );
 }
 
+
+add_editor_style( 'assets/styles/typography.css' );
 add_editor_style( 'inc/admin/editor-typography.php' );
