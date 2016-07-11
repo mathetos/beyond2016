@@ -23,6 +23,7 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
+<?php //print_r(beyond2016_get_color_scheme_css($colors)); ?>
 	<div class="site-inner">
 		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentysixteen' ); ?></a>
 

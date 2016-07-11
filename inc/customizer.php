@@ -175,7 +175,7 @@ function beyond2016_customize_register( $wp_customize ) {
 	) ) );
 
 	$wp_customize->add_setting( 'content_title_color', array(
-		'default'           => $color_scheme[4],
+		'default'           => $color_scheme[5],
 		'sanitize_callback' => 'sanitize_hex_color',
 		'transport'         => 'postMessage',
 	) );
@@ -233,6 +233,29 @@ function beyond2016_get_color_schemes() {
 				'#007acc',
 				'#1a1a1a',
 				'#686868',
+				'#ffffff', 
+			),
+		),
+		'beyond2016' => array(
+			'label'  => __( 'Beyond 2016', 'beyond2016' ),
+			'colors' => array(
+				'#4d6b8e',
+				'#f1f1f1',
+				'#4d6b8e',
+				'#595959',
+				'#db9215',
+				'#4d6b8e',
+			),
+		),
+		'warmth' => array(
+			'label'  => __( 'Warmth', 'beyond2016' ),
+			'colors' => array(
+				'#565656',
+				'#f2e8e1',
+				'#91525a',
+				'#565656',
+				'#c09f80',
+				'#91525a',
 			),
 		),
 		'dark' => array(
@@ -243,6 +266,7 @@ function beyond2016_get_color_schemes() {
 				'#9adffd',
 				'#e5e5e5',
 				'#c1c1c1',
+				'#c1c1c1',
 			),
 		),
 		'gray' => array(
@@ -251,6 +275,7 @@ function beyond2016_get_color_schemes() {
 				'#616a73',
 				'#4d545c',
 				'#c7c7c7',
+				'#f2f2f2',
 				'#f2f2f2',
 				'#f2f2f2',
 			),
@@ -263,6 +288,7 @@ function beyond2016_get_color_schemes() {
 				'#640c1f',
 				'#402b30',
 				'#402b30',
+				'#402b30',
 			),
 		),
 		'yellow' => array(
@@ -273,16 +299,7 @@ function beyond2016_get_color_schemes() {
 				'#774e24',
 				'#3b3721',
 				'#5b4d3e',
-			),
-		),
-		'beyond2016' => array(
-			'label'  => __( 'Beyond 2016', 'beyond2016' ),
-			'colors' => array(
-				'#4d6b8e',
-				'#f1f1f1',
-				'#4d6b8e',
-				'#595959',
-				'#bc822b',
+				'#5b4d3e',
 			),
 		),
 	) );
@@ -389,6 +406,7 @@ function beyond2016_color_scheme_css() {
 		'link_color'            => $color_scheme[2],
 		'main_text_color'       => $color_scheme[3],
 		'secondary_text_color'  => $color_scheme[4],
+		'content_title_color'  => $color_scheme[5],
 		'border_color'          => vsprintf( 'rgba( %1$s, %2$s, %3$s, 0.2)', $color_textcolor_rgb ),
 
 	);
@@ -438,9 +456,10 @@ function beyond2016_get_color_scheme_css( $colors ) {
 		'main_text_color'       => '',
 		'secondary_text_color'  => '',
 		'border_color'          => '',
+		'content_title_color'   => '',
 	) );
 	$color_scheme = beyond2016_get_color_scheme();
-	$color_textcolor_rgb = beyond2016_hex2rgb( $color_scheme[3] );
+	$color_textcolor_rgb = beyond2016_hex2rgb( $color_scheme[0] );
 	
 	return <<<CSS
 	/* Color Scheme */
@@ -522,6 +541,14 @@ function beyond2016_get_color_scheme_css( $colors ) {
 		color: {$colors['link_color']};
 	}
 
+	.background-color {background: {$colors['background_color']}}
+	.page-background-color {background: {$colors['page_background_color']}}
+	.link-text-color {color: {$colors['link_color']}}
+	.main-text-color {color: {$colors['main_text_color']}}
+	.secondary-text-color {color: {$colors['secondary_text_color']}}
+	.border-color {border-color: {$colors['border_color']}}
+	.title-text-color {border-color: {$colors['content_title_color']}}
+
 	mark,
 	ins,
 	button:hover,
@@ -567,13 +594,18 @@ function beyond2016_get_color_scheme_css( $colors ) {
 	.pagination a:hover,
 	.pagination a:focus,
 	.widget-title a,
-	.site-branding .site-title a,
-	.entry-title a,
+
 	.page-links > .page-links-title,
 	.comment-author,
 	.comment-reply-title small a:hover,
 	.comment-reply-title small a:focus {
 		color: {$colors['main_text_color']};
+	}
+
+	.site-branding .site-title a,
+	.entry-header .entry-title a,
+	.entry-header .entry-title {
+		color: {$colors['content_title_color']};
 	}
 
 	blockquote,
@@ -753,6 +785,7 @@ function beyond2016_color_scheme_css_template() {
 		'main_text_color'       => '{{ data.main_text_color }}',
 		'secondary_text_color'  => '{{ data.secondary_text_color }}',
 		'border_color'          => '{{ data.border_color }}',
+		'content_title_color'          => '{{ data.content_title_color }}',
 	);
 	?>
 	<script type="text/html" id="tmpl-beyond2016-color-scheme">
@@ -972,8 +1005,6 @@ function beyond2016_main_text_color_css() {
 		.pagination a:hover,
 		.pagination a:focus,
 		.widget-title a,
-		.site-branding .site-title a,
-		.entry-title a,
 		.page-links > .page-links-title,
 		.comment-author,
 		.comment-reply-title small a:hover,
@@ -1019,7 +1050,7 @@ function beyond2016_main_text_color_css() {
 			background-color: %1$s;
 		}
 
-		/* Border Color */
+		/* Custom Border Color */
 		fieldset,
 		pre,
 		abbr,
@@ -1076,6 +1107,7 @@ function beyond2016_main_text_color_css() {
 
 	wp_add_inline_style( 'beyond2016-style', sprintf( $css, $main_text_color, $border_color ) );
 }
+
 add_action( 'wp_enqueue_scripts', 'beyond2016_main_text_color_css', 11 );
 
 /**
@@ -1151,5 +1183,35 @@ function beyond2016_secondary_text_color_css() {
 	wp_add_inline_style( 'beyond2016-style', sprintf( $css, $secondary_text_color ) );
 }
 add_action( 'wp_enqueue_scripts', 'beyond2016_secondary_text_color_css', 11 );
+
+/**
+ * Enqueues front-end CSS for the secondary text color.
+ *
+ * @since Beyond 2016 1.0
+ *
+ * @see wp_add_inline_style()
+ */
+function beyond2016_content_title_color_css() {
+	$color_scheme    = beyond2016_get_color_scheme();
+	$default_color   = $color_scheme[5];
+	$content_title_color = get_theme_mod( 'content_title_color', $default_color );
+
+	// Don't do anything if the current color is the default.
+	if ( $content_title_color === $default_color ) {
+		return;
+	}
+
+	$css = '
+		/* Custom Content Title Color */
+
+		.site-branding .site-title a,
+		.entry-header .entry-title {
+			color: %1$s;
+		}
+	';
+
+	wp_add_inline_style( 'beyond2016-style', sprintf( $css, $content_title_color ) );
+}
+add_action( 'wp_enqueue_scripts', 'beyond2016_content_title_color_css', 11 );
 
 include_once( BEYOND2016_PATH . '/inc/beyond2016-customizer-settings.php' );

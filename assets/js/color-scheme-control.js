@@ -11,14 +11,16 @@
 			'page_background_color',
 			'link_color',
 			'main_text_color',
-			'secondary_text_color'
+			'secondary_text_color',
+			'content_title_color'
 		],
 		colorSettings = [
 			'background_color',
 			'page_background_color',
 			'link_color',
 			'main_text_color',
-			'secondary_text_color'
+			'secondary_text_color',
+			'content_title_color'
 		];
 
 	api.controlConstructor.select = api.Control.extend( {
@@ -59,6 +61,13 @@
 					color = colors[4];
 					api( 'secondary_text_color' ).set( color );
 					api.control( 'secondary_text_color' ).container.find( '.color-picker-hex' )
+						.data( 'data-default-color', color )
+						.wpColorPicker( 'defaultColor', color );
+
+					// Update Content Title Color.
+					color = colors[5];
+					api( 'content_title_color' ).set( color );
+					api.control( 'content_title_color' ).container.find( '.color-picker-hex' )
 						.data( 'data-default-color', color )
 						.wpColorPicker( 'defaultColor', color );
 				} );
