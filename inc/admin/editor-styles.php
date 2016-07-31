@@ -70,6 +70,67 @@ function beyond2016_is_edit_page( $new_edit = null ){
         	return in_array( $pagenow, array( 'post.php', 'post-new.php' ) );
 }
 
-
 add_editor_style( 'assets/styles/typography.css' );
-add_editor_style( 'inc/admin/editor-typography.php' );
+
+include_once( BEYOND2016_PATH . '/inc/admin/tinymce-customizer-styles.php');
+
+function beyond2016_define_theme_mods( $theme_mods ) {
+	$theme_mods = array(
+		'page_background_color' => array(
+			array(
+				'selectors'  => 'body',
+				'properties' => array( 'background-color' )
+			),
+			array(
+				'selectors'  => 'ins',
+				'properties' => array( 'color' )
+			)
+		),
+		'link_color' => array(
+			array(
+				'selectors'  => 'a',
+				'properties' => array( 'color' )
+			),
+			array(
+				'selectors'  => 'ins',
+				'properties' => array( 'background-color' )
+			)
+		),
+		'main_text_color' => array(
+			array(
+				'selectors'  => 'body, blockquote cite',
+				'properties' => array( 'color' )
+			),
+			array(
+				'selectors'  => 'blockquote',
+				'properties' => array( 'border-color' )
+			),
+			array(
+				'selectors'  => 'code',
+				'properties' => array( 'background-color' ),
+				'alpha'      => '0.2'
+			),
+			array(
+				'selectors'  => 'table, th, td, pre',
+				'properties' => array( 'border-color' ),
+				'alpha'      => '0.2'
+			)
+		),
+		'secondary_text_color' => array(
+			array(
+				'selectors'  => 'blockquote',
+				'properties' => array( 'color' )
+			)
+		),
+		'content_title_color' => array(
+			array(
+				'selectors'  => 'p.block-text',
+				'properties' => array( 'border-color' )
+			)
+		),
+	);
+
+	return $theme_mods;
+}
+add_filter( 'kwh_theme_mods', 'beyond2016_define_theme_mods' );
+
