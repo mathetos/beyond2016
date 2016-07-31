@@ -31,7 +31,7 @@
 ?>
 
 <li>
-	<a href="<?php echo get_the_permalink($post->ID); ?>" data-largesrc="<?php echo $url; ?>" data-title="<?php echo b16ecom_comment_count(); ?> <?php the_title( '', '' ); ?>" data-description="<?php echo strip_shortcodes($trimmed_content); ?>">
+	<a href="<?php echo get_the_permalink($post->ID); ?>" data-largesrc="<?php echo $url; ?>" data-title="<?php the_title( '', '' ); ?>" data-description="<?php echo strip_shortcodes($trimmed_content); ?>">
 		<?php echo the_post_thumbnail( 'recentposts', array( 'alt' => the_title_attribute( 'echo=0' ) ) ); ?>
 	</a>
 </li>
