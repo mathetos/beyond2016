@@ -269,6 +269,17 @@ function beyond2016_get_color_schemes() {
 				'#d8955b',
 			),
 		),
+		'generosity' => array(
+			'label'  => __( 'Generosity', 'beyond2016' ),
+			'colors' => array(
+				'#7aba7f',
+				'#e8e2da',
+				'#3e92cc',
+				'#6a6e75',
+				'#3e92cc',
+				'#446687',
+			),
+		),
 		'dark' => array(
 			'label'  => __( 'Dark', 'beyond2016' ),
 			'colors' => array(
