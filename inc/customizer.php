@@ -258,6 +258,17 @@ function beyond2016_get_color_schemes() {
 				'#91525a',
 			),
 		),
+		'pastel' => array(
+			'label'  => __( 'Pastel', 'beyond2016' ),
+			'colors' => array(
+				'#fedcd2',
+				'#c9e5de',
+				'#c4af0f',
+				'#b25211',
+				'#d8955b',
+				'#d8955b',
+			),
+		),
 		'dark' => array(
 			'label'  => __( 'Dark', 'beyond2016' ),
 			'colors' => array(
@@ -1009,7 +1020,8 @@ function beyond2016_main_text_color_css() {
 		.page-links > .page-links-title,
 		.comment-author,
 		.comment-reply-title small a:hover,
-		.comment-reply-title small a:focus {
+		.comment-reply-title small a:focus,
+		.block-text {
 			color: %1$s
 		}
 
