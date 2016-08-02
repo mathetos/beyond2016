@@ -106,8 +106,6 @@ function beyond2016_body_classess($classes) {
 	if ( is_page() && $sidebar == 'disable' ) {
 
 		$classes[] = 'no-sidebar';
-	} elseif ( is_404() || is_home() || is_front_page() || is_archive() || is_tax() ) {
-		$classes[] = 'no-sidebar';
 	}
 
 	return $classes;

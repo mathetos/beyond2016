@@ -11,15 +11,6 @@
 ?>
 
 		</div><!-- .site-content -->
-<?php
-if ( is_page() || is_singular('give_forms') ) {
-	$hidefooter = get_post_meta( $post->ID, 'hide-footer', true );
-} else {
-	$hidefooter = array('');
-}
-
-if ( $hidefooter !== 'yes' ) {
-?>
 		<footer id="colophon" class="site-footer" role="contentinfo">
 			<?php if ( has_nav_menu( 'primary' ) ) : ?>
 				<nav class="main-navigation" role="navigation" aria-label="<?php _e( 'Footer Primary Menu', 'beyond2016' ); ?>">
@@ -80,7 +71,6 @@ if ( $hidefooter !== 'yes' ) {
 				?>
 			</div><!-- .site-info -->
 		</footer><!-- .site-footer -->
-<?php } // end hide footer condition ?>
 	</div><!-- .site-inner -->
 </div><!-- .site -->
 

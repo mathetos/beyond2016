@@ -13,21 +13,12 @@
 
 get_header();
 
-$sidebar = get_post_meta( $post->ID, 'beyond2016-sidebar-layout', true );
-$hidebottomsidebar = get_post_meta( $post->ID, 'hide-bottom-sidebar', true );
-$hidefooter = get_post_meta( $post->ID, 'hide-footer', true );
-
-
-if ($sidebar == 'left') {
-  get_sidebar();
-  $alignment = 'sidebar-left';
-} elseif ($sidebar == 'right') {
-  $alignment = 'sidebar-right';
-} else {
-  $alignment = '';
+if ( b16_display_sidebar_alignment($post) == 'sidebar-left' ) {
+	get_sidebar();
 }
+
 ?>
-<div id="primary" class="content-area <?php echo $alignment; ?>">
+<div id="primary" class="content-area <?php echo b16_display_sidebar_alignment($post); ?>">
 	<main id="main" class="site-main" role="main">
     <?php
 		// Start the loop.
@@ -48,17 +39,16 @@ if ($sidebar == 'left') {
 	</main><!-- .site-main -->
 
 	<?php
-		if ($hidebottomsidebar == 'yes') {
-		//display nothing here
-		} else {
-		get_sidebar( 'content-bottom' );
-		} 
+		echo b16_maybe_show_bottom_sidebar($post)
 	?>
 
 </div><!-- .content-area -->
 
 <?php
-if ($sidebar == 'right') {
-  get_sidebar();
-} ?>
-<?php get_footer(); ?>
+	if ( b16_display_sidebar_alignment($post) == 'sidebar-right' ) {
+		get_sidebar();
+	}
+
+	echo b16_maybe_show_footer($post);
+
+?>

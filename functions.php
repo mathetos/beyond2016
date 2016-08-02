@@ -434,9 +434,42 @@ add_filter( 'wp_get_attachment_image_attributes', 'beyond2016_post_thumbnail_siz
 
 /*Add Custom Functions */
 
-include_once('inc/beyond2016-functions.php');
-include_once('inc/metaboxes.php');
+include_once(get_template_directory() . '/inc/beyond2016-functions.php');
+include_once(get_template_directory() . '/inc/metaboxes.php');
 include_once(get_template_directory() . '/inc/admin/editor-styles.php');
+include_once(get_template_directory() . '/inc/helper-functions.php');
 
 
+function ua_add_meta_boxes($post_type, $post){
+	global $wp_meta_boxes;
+	if(!isset($wp_meta_boxes[$post_type]['normal']['core']['authordiv'])) return;
 
+	// Change the callback
+	//$wp_meta_boxes[$post_type]['normal']['core']['authordiv']['callback'] = 'my_callback_authordiv_html';
+
+	// Or hook into the dropdown html created Html
+	add_filter('wp_dropdown_users', 'ua_extend_metbox_authordiv', 10, 1);
+}
+add_action('add_meta_boxes', 'ua_add_meta_boxes', 5, 2);
+
+function my_callback_authordiv_html(){
+	// copy the default select stuff and add some more HTML of our own
+	?>
+
+	<p>Testing!</p>
+
+	<?php
+}
+
+function ua_extend_metbox_authordiv($html){
+
+	global $post;
+	remove_filter('wp_dropdown_users', 'ua_expand_author_box', 10, 1);
+	$meta = get_post_meta($post->ID, 'my_custom field', true);
+
+	$label = __('Check my checkbox', 'text-domain');
+	$html .= '<input type="hidden" name="ua_author_metabox_check_nonce" value="'. wp_create_nonce(basename(__FILE__)). '" />';
+	$html .= '<label><input type="checkbox" name="my_custom field" id="my_custom field"' . ( $meta ? ' checked="checked"' : '' ) . ' /> '.$label.'</label>';
+
+	return $html;
+}
